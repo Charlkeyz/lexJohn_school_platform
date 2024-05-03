@@ -10,16 +10,16 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <>
-    <main className="w-screen h-80 bg-primary flex justify-between items-center text-white relative top-11">
+    <main className=" bg-primary relative top-11">
+    <div className="w-screen h-80 flex justify-between items-center text-white ">
         <section className="pl-36 pb-24" >
             <img src={Logo} alt=""  />
             <div className="flex gap-5 pt-10" >
-                <FaFacebookF className=" rounded bg-secondary" />
-                <FaInstagram/>
-                <FaLinkedinIn/>
-                <FaTwitter/>
-                <FaYoutube/>
+                <span className="w-[34.5px] h-[34.5px] pt-10.5 gap-7.5 rounded-[4px] bg-socialIcon flex justify-center items-center"><FaFacebookF/></span>
+                <span className="w-[34.5px] h-[34.5px] pt-10.5 gap-7.5 rounded-[4px] bg-socialIcon flex justify-center items-center"><FaInstagram/></span>
+                <span className="w-[34.5px] h-[34.5px] pt-10.5 gap-7.5 rounded-[4px] bg-socialIcon flex justify-center items-center"><FaLinkedinIn/></span>
+                <span className="w-[34.5px] h-[34.5px] pt-10.5 gap-7.5 rounded-[4px] bg-socialIcon flex justify-center items-center"><FaTwitter/></span>
+                <span className="w-[34.5px] h-[34.5px] pt-10.5 gap-7.5 rounded-[4px] bg-socialIcon flex justify-center items-center"><FaYoutube/></span>
             </div>
         </section>
 
@@ -48,11 +48,11 @@ const Footer = () => {
                 <Button className="block relative top-10 left-44">Subscribe</Button>
             </div>
             
-    </main>
-            <div className="flex bg-primary text-white">
+    </div>
+            <div className="flex bg-primary text-white justify-center p-5 items-center">
                 <FaRegCopyright/> 2024 LEXICON Technologies. All rights reserved
             </div>
-    </>
+    </main>
   )
 }
 
