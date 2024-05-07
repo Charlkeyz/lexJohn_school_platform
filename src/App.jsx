@@ -1,14 +1,20 @@
 import './App.css'
-import Footer from './components/Footer/footer'
-import Navbar from './components/NavBar/Navbar'
+import HomePage from './LexJohn Pages/Home Page/HomePage'
+import { HashRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   
 
   return (
     <>
-      <Navbar/>
-      <Footer/>
+      <HashRouter hashType="hashbang">
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+        </Routes>
+      </HashRouter>
+      
+      
     </>
   )
 }

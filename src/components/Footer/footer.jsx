@@ -10,8 +10,8 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <main className=" bg-primary relative top-11">
-    <div className="w-screen h-80 flex justify-between items-center text-white ">
+    <main className="w-screen bg-primary relative top-11">
+    <div className=" h-80 flex justify-between items-center text-white ">
         <section className="pl-36 pb-24" >
             <img src={Logo} alt=""  />
             <div className="flex gap-5 pt-10" >
@@ -42,7 +42,7 @@ const Footer = () => {
                 }
             </div>
             <div className="relative right-64 bottom-10">
-                <h1 className="pb-5">Newsletter</h1>
+                <h1 className="pb-5 text-2xl font-semibold">Newsletter</h1>
                 <p>Subscribe to our newsletter</p>
                 <input type="text" placeholder="Your Email" className="w-72 h-11 p-5 rounded"/>
                 <Button className="block relative top-10 left-44">Subscribe</Button>
