@@ -14,11 +14,11 @@ const Navbar = () => {
 
   return (
     
-        <main className="w-screen bg-primary flex h-[114px] justify-between items-center ">
+        <nav className="w-screen bg-primary mx-auto flex h-[100px] justify-between items-center ">
             <div className='pl-36'>
                 <img src={Logo} alt="" />    
             </div>
-            <ul className='flex justify-center items-center pr-40 '>
+            <ul className='flex justify-center items-center pr-20'>
                 {
                     NavRoutes.map((route, index)=> (
                         <li key={index}>
@@ -33,7 +33,7 @@ const Navbar = () => {
             </ul>
            
 
-        </main>
+        </nav>
     
   )
 }

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-
+import  './Home.css'
 import Button from '../../components/Button/Button'
 import Image1 from '/LexJohn_Images/homepages images/Images1.png'
 import Image2 from '/LexJohn_Images/homepages images/images 2.png'
@@ -11,12 +11,16 @@ import Products from '../../components/Our products/Products'
 import Testimonial from '../../components/Testimonial/Testimonial'
 import Navbar from '../../components/NavBar/Navbar'
 import Footer from '../../components/Footer/footer'
+import { useInView } from "react-intersection-observer";
+
 const HomePage = () => {
+    const {ref: componentRef, inView: isVisible} = useInView()
+    
   return (
     <main>
         <Navbar/>
         <section className='flex flex-col justify-center items-center w-screen'>
-            <div className='flex justify-center gap-40 items-center w-[1200px] p-20'>
+            <div ref={componentRef} className={`flex justify-center gap-40 items-center w-[1200px] p-20 ${isVisible ? 'animate-fadeup' : ''}`}>
                 <div className='flex flex-col w-[580.5px] gap-5'>
                     <h1 className='text-4xl font-bold leading-10 w-[486px]'>Transforming Digital Solutions for a Smarter Future</h1>
                     <p className='text-text-color leading-6 text-base'>
@@ -33,7 +37,7 @@ const HomePage = () => {
             <div className='w-screen h-[72px] bg-secondary flex justify-center items-center'>
                 <p className='text-white text-base font-bold leading-6'> 1000+ customers in over 20 countries in africa grow their businesses with LEXJON Technologies</p>
             </div>
-            <div className='flex justify-center items-center w-[1200px] gap-10 p-20'>
+            <div ref={componentRef} className={`flex justify-center items-center w-[1200px] gap-10 p-20 ${isVisible ? 'animate-fadeup' : ''}`}>
                 <img src={Image2} alt="" />
                 <div className='flex flex-col w-[644px] gap-5'>
                     <h1 className='text-2xl font-semibold leading-10'>About LexJon</h1>
@@ -56,7 +60,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-between items-center gap-24'>
+            <div ref={componentRef} className={`flex justify-between items-center gap-24 ${isVisible ? 'animate-fadeup' : ''}`}>
                 {
                     ArraysOfSDE.map((item, index)=> (
                         <div key={index} className='flex flex-col justify-center items-center'>
@@ -66,7 +70,7 @@ const HomePage = () => {
                     ))
                 }
             </div>
-            <div className='my-10 flex flex-col items-center gap-5'>
+            <div ref={componentRef} className={`my-10 flex flex-col items-center gap-5 ${isVisible ? 'animate-fadeup' : ''}`}>
                 <img src={FeaturedCourseImg} alt="" />
                 <div className="flex flex-col gap-4">
                     <p className='text-text-color text-lg font-normal leading-6'>Our team of experts offer a range of services to meet up your IT needs. We specialize in:</p>
@@ -84,13 +88,13 @@ const HomePage = () => {
                     </div>
             </div>
 
-            <Companies/>
+            <Companies componentRef = {componentRef} isVisible = {isVisible}/>
 
             <div className="relative w-full h-full flex flex-col justify-center items-center">
                 <img src={OvalBackground} alt="" className=" inset-0 w-full h-full object-cover" />
-                <div className='absolute'><Products/></div>
+                <div className='absolute'><Products componentRef = {componentRef} isVisible = {isVisible}/></div>
             </div>
-            <div className='relative bottom-56 '>
+            <div ref={componentRef} className={`relative bottom-56 ${isVisible ? 'animate-fadeup' : ''}`}>
                 <Testimonial/>  
             </div>
         </section>

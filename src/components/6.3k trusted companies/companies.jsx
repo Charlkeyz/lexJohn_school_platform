@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import { ArrayOfLogos } from '../../ArrayOfData/ArrayLogos'
+import './companies.css'
 
 
-const Companies = () => {
+const Companies = ({isVisible, componentRef}) => {
   return (
-    <div className='flex items-center justify-center gap-24 my-24'>
+    <div ref={componentRef} className={`flex items-center justify-center gap-24 my-24 ${isVisible ? 'animate-fadeup' : '' }`}>
                <div className='w-[318px] h-[130px] mb-20'>
                     <h1 className='text-2xl font-semibold leading-10 py-5'>6.3k trusted companies</h1>
                     <p className='text-xs font-normal text-text-color leading-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo alias tenetur debitis illum nulla. Ea illum nisi asperiores laboriosam molestias sit. Perferendis dolor tempore accusamus ducimus et quasi nesciunt quo!</p>

@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 
 import { ProductArray } from "../../ArrayOfData/productArray"
 import tickerIcon from '/LexJohn_Images/homepages images/Iconsax.svg'
 import Button from "../Button/Button"
-const Products = () => {
+import './Product.css'
+const Products = ({isVisible, componentRef}) => {
   return (
     
-        <div className="flex flex-col items-center pb-48">
+        <div ref={componentRef} className={`flex flex-col items-center pb-48 ${isVisible ? 'animate-fadeup' : ''}`}>
             <div className="flex flex-col items-center gap-5 relative bottom-24">
                 <h1 className="text-2xl font-semibold leading-10">Our Products</h1>
                 <p className="text-text-color font-normal text-base leading-6">Discover our industry-leading software solutions</p>
