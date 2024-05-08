@@ -7,8 +7,8 @@ import { Link, useLocation } from 'react-router-dom'
 const Navbar = () => {
     const location = useLocation()
     
-    function isActive(route){
-        return location.pathname === route 
+    function isActive(routes){
+        return location.pathname === routes 
     }
 
 
