@@ -10,8 +10,8 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <main className=" bg-primary relative top-11">
-      <div className="w-screen h-80 flex justify-between items-center text-white">
+    <main className="w-screen bg-primary">
+      <div className="w-full h-80 flex justify-center items-center text-white">
         <section className="pl-36 pb-24">
           <img src={Logo} alt="" />
           <div className="flex gap-5 pt-10">
@@ -33,17 +33,34 @@ const Footer = () => {
           </div>
         </section>
 
-        <div className="flex gap-20 relative right-24">
-          {footerData.map((item, index) => (
-            <div key={index}>
-              <h2>{item.header}</h2>
-              <ul className="pt-4">
-                {item.list.map((item, index) => (
-                  <li key={index} className="pt-2">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="w-full flex gap-20 justify-center items-center">
+                {
+                    footerData.map((item, index)=> (
+                        <div key={index} className={`${index === 1 || index === 2  ? 'mb-16' : ''}`}>
+                            <h2>{item.header}</h2>
+                            <ul className="pt-4">
+                                {
+                                    item.list.map((item, index)=> (
+                                        <li key={index} className="pt-2">{item}</li>
+                                    ))
+                                }
+                            </ul>        
+                        </div>
+                        
+                    ))
+                }
+                <div className="mb-16">
+                    <h1 className="pb-5 text-2xl font-semibold">Newsletter</h1>
+                    <p>Subscribe to our newsletter</p>
+                    <input type="text" placeholder="Your Email" className="w-72 h-11 p-5 rounded"/>
+                    <Button className="block relative top-10 left-44">Subscribe</Button>
+                </div>
+            </div>
+            
+            
+    </div>
+            <div className="flex bg-primary text-white justify-center p-5 items-center">
+                <FaRegCopyright/> 2024 LEXICON Technologies. All rights reserved
             </div>
           ))}
         </div>
