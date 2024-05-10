@@ -10,7 +10,8 @@ export default {
         'primary': "#091140",
         'secondary': "#FAAD29",
         'socialIcon': '#1B2243',
-        'text-color': '#88918B'
+        'text-color': '#88918B',
+        'background': '#F6F9FC'
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],
