@@ -10,8 +10,13 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 const Footer = () => {
   return (
+<<<<<<< HEAD
     <main className=" bg-primary relative top-11">
       <div className="w-screen h-80 flex justify-between items-center text-white ">
+=======
+    <main className="w-screen bg-primary">
+      <div className="w-full h-80 flex justify-center items-center text-white">
+>>>>>>> About
         <section className="pl-36 pb-24">
           <img src={Logo} alt="" />
           <div className="flex gap-5 pt-10">
