@@ -29,7 +29,7 @@ const Navbar = () => {
                         
                     ))
                 }
-                 <Button>Get in touch</Button>
+                 <Button className='text-white'>Get in touch</Button>
             </ul>
            
 

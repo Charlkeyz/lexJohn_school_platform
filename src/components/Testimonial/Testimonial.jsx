@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Testimonial = () => {
+const Testimonial = ({title}) => {
     
     var settings = {
         dots: true,
@@ -40,8 +40,8 @@ const Testimonial = () => {
       };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 w-3/4 m-auto">
-        <h1 className="text-2xl font-semibold leading-10">Testimonial</h1>
+    <div className="flex flex-col justify-center items-center gap-10 w-3/4 m-auto mb-32">
+        <h1 className="text-2xl font-semibold leading-10">{title}</h1>
         <div className="flex justify-center flex-wrap items-center mt-5">
             <Slider {...settings} className="w-[1350px] ">
             

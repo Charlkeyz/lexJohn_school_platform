@@ -1,4 +1,4 @@
-@keyframes fadeup {
+/* @keyframes fadeup {
     0% {
         opacity: 0;
         transform: translateY(8rem);
@@ -11,4 +11,4 @@
 
 .animate-fadeup > *{
     animation: fadeup 2s ease-out forwards;
-}
+} */

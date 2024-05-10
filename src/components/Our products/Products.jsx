@@ -37,7 +37,7 @@ const Products = ({isVisible, componentRef}) => {
                                         }
                                     </ul>
                                 </div>
-                                <Button className="text-base font-bold leading-6"> Learn More</Button>
+                                <Button className="text-base font-bold text-white leading-6"> Learn More</Button>
                             </div>
                         )
                     })

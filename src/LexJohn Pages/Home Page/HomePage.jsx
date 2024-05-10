@@ -27,7 +27,7 @@ const HomePage = () => {
                         Leading the way of software development digital marketing, and digital education.
                         We create innovative solutions that empower businesses and educational institute
                     </p>
-                    <Button className='w-[144px]'>Get in Touch</Button>
+                    <Button className='w-[144px] text-white'>Get in Touch</Button>
                     <p className='text-text-color leading-6 text-base'>
                         Get in touch to learn how we can help your businesses or educational institution thrive. 
                     </p>
@@ -51,7 +51,7 @@ const HomePage = () => {
                         or get started with our full suite of free tools and upgrade as you grow.
                     </p>
                     <div className='flex gap-8'>
-                        <Button className='w-[139px] h-[48px] text-base font-bold'>
+                        <Button className='w-[139px] h-[48px] text-white text-base font-bold'>
                             Get a demo
                         </Button>
                         <Button className='w-[198px] h-[48px] bg-white text-secondary text-base font-bold border border-secondary hover:bg-secondary hover:text-white'>
@@ -79,7 +79,7 @@ const HomePage = () => {
                     <p className='text-text-color text-lg font-normal leading-6'><span className='text-secondary'>Digital Education: </span> Innovative educational software and platforms designed for effective learning</p>
                 </div>
                     <div className='flex gap-8'>
-                        <Button className='w-[139px] h-[48px] text-base font-bold'>
+                        <Button className='w-[139px] h-[48px] text-white text-base font-bold'>
                             Get a demo
                         </Button>
                         <Button className='w-[198px] h-[48px] bg-white text-secondary text-base font-bold border border-secondary hover:bg-secondary hover:text-white'>
@@ -88,14 +88,16 @@ const HomePage = () => {
                     </div>
             </div>
 
-            <Companies componentRef = {componentRef} isVisible = {isVisible}/>
+            <div ref={componentRef} className={`${isVisible ? 'animate-fadeup' : ''}`}>
+                <Companies/>
+            </div>
 
             <div className="relative w-full h-full flex flex-col justify-center items-center">
                 <img src={OvalBackground} alt="" className=" inset-0 w-full h-full object-cover" />
                 <div className='absolute'><Products componentRef = {componentRef} isVisible = {isVisible}/></div>
             </div>
             <div ref={componentRef} className={`relative bottom-56 ${isVisible ? 'animate-fadeup' : ''}`}>
-                <Testimonial/>  
+                <Testimonial title="Testimonials"/>  
             </div>
         </section>
         <Footer/>
