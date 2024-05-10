@@ -1,5 +1,7 @@
 import React from "react";
 import Contact from "../../Contact/Contact";
+import Navbar from "../../NavBar/Navbar";
+import Footer from "../../Footer/footer";
 import Button from "../../Button/Button";
 
 const dummyData = [
@@ -91,6 +93,7 @@ const productsData = [
 const AboutUs = () => {
   return (
     <>
+      <Navbar />
       <div className="w-screen flex flex-col">
         {dummyData.map((items, index) => {
           return (
@@ -141,13 +144,11 @@ const AboutUs = () => {
         </div>
       </div>
       <div>
-        <div className="flex justify-center">
-          <div className="w-[400px] justify-center">
-            <h3 className="text-2xl font-bold my-5">Our Team</h3>
-            <p className="text-xs text-unique my-[-12px]">
-              Meet the leaders driving LexJon success
-            </p>
-          </div>
+        <div className="flex  flex-col justify-center items-center">
+          <h3 className="text-2xl font-bold my-5">Our Team</h3>
+          <p className="text-xs text-unique my-[-12px]">
+            Meet the leaders driving LexJon success
+          </p>
         </div>
         <div className="flex justify-center gap-4 my-10">
           {ourTeamData.map((items, index) => {
@@ -168,11 +169,11 @@ const AboutUs = () => {
             );
           })}
         </div>
-        <div>
-          <div className="border-[0.75px] bg-#FAAD29"></div>
-        </div>
+        {/* <div>
+          <div className="w-[10px] border-[0.75px] bg-yellow"></div>
+        </div> */}
       </div>
-      <Contact></Contact>
+      <Contact className="mb-10"></Contact>
       <div className="h-[400px] bg-primary">
         <div className=" my-10 relative top-14">
           <h1 className="text-1xl text-white font-medium flex justify-center">
@@ -195,16 +196,16 @@ const AboutUs = () => {
                   </h3>
                   <div className="px-6"></div>
                 </div>
-                <div className="bg-yellow h-48 flex items-center w-41 my-4 rounded-lg">
-                  <h4 className="text-white text-1xl px-20 relative top-0">
-                    {items.button}
-                  </h4>
-                </div>
+
+                <Button className="w-[200px] h-[38px] mt-5 flex items-center justify-center text-[14px]">
+                  Learn More
+                </Button>
               </div>
             );
           })}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

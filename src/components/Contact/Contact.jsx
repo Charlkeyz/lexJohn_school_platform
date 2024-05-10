@@ -18,7 +18,7 @@ const contactData = [
 const Contact = () => {
   return (
     <>
-      <div className="my-10">
+      <div className="my-10 border-t-2 border-yellow-400">
         <div className="mx-40">
           <h3 className="text-1xl font-bold">Contact Us</h3>
           <p className="text-xs my-4 font-medium">

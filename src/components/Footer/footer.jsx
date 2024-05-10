@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <main className="w-screen bg-primary">
       <div className="w-full h-80 flex justify-center items-center text-white">
-        <section className="pl-36 pb-24">
+        <section className="pl-30 pb-24">
           <img src={Logo} alt="" />
           <div className="flex gap-5 pt-10">
             <span className="w-[34.5px] h-[34.5px] pt-10.5 gap-7.5 rounded-[4px] bg-socialIcon flex justify-center items-center">
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </section>
 
-        <div className="flex gap-20 relative right-24">
+        <div className="flex gap-20 relative left-10">
           {footerData.map((item, index) => (
             <div key={index}>
               <h2>{item.header}</h2>
@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="relative right-64 bottom-10">
+        <div className="relative left-20 bottom-10">
           <h1 className="pb-5">Newsletter</h1>
           <p>Subscribe to our newsletter</p>
           <input
@@ -55,7 +55,7 @@ const Footer = () => {
             placeholder="Your Email"
             className="w-72 h-11 p-5 rounded"
           />
-          <Button className="block relative top-10 left-44">Subscribe</Button>
+          <Button className="block relative top-10 left-40">Subscribe</Button>
         </div>
       </div>
       <div className="flex bg-primary text-white justify-center p-5 items-center">
