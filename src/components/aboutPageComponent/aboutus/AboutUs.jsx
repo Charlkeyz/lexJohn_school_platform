@@ -1,4 +1,5 @@
-import React from "react";
+
+
 import Contact from "../../Contact/Contact";
 import Navbar from "../../NavBar/Navbar";
 import Footer from "../../Footer/footer";
@@ -98,6 +99,7 @@ const AboutUs = () => {
         {dummyData.map((items, index) => {
           return (
             <div
+            key={index}
               className={`flex ${
                 index === 1 ? "flex-row-reverse" : "flex-row"
               } justify-center items-center flex-row gap-10 ${
@@ -114,7 +116,7 @@ const AboutUs = () => {
                 >
                   {items.head}
                 </h2>
-                <p className="w-[360px] text-xs text-unique">{items.content}</p>
+                <p className="w-[360px] text-xs text-text-color">{items.content}</p>
               </div>
               <img className="w-[400px] my-10" src={items.image} alt="" />
             </div>
@@ -130,7 +132,7 @@ const AboutUs = () => {
         <div className="flex justify-center gap-12">
           {lexjonData.map((items, index) => {
             return (
-              <div className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5">
+              <div key={index} className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5">
                 <div className="px-20">
                   <img className="my-5" src={items.image} alt="" />
                 </div>
@@ -146,14 +148,14 @@ const AboutUs = () => {
       <div>
         <div className="flex  flex-col justify-center items-center">
           <h3 className="text-2xl font-bold my-5">Our Team</h3>
-          <p className="text-xs text-unique my-[-12px]">
+          <p className="text-xs text-text-color my-[-12px]">
             Meet the leaders driving LexJon success
           </p>
         </div>
         <div className="flex justify-center gap-4 my-10">
           {ourTeamData.map((items, index) => {
             return (
-              <div>
+              <div key={index}>
                 <div>
                   <img className="" src={items.image} alt="" />
                 </div>
@@ -161,7 +163,7 @@ const AboutUs = () => {
                   <h3 className="text-1xl font-bold flex justify-center items-center my-4">
                     {items.names}
                   </h3>
-                  <p className="text-xs font-medium text-unique flex justify-center items-center relative bottom-2">
+                  <p className="text-xs font-medium text-text-color flex justify-center items-center relative bottom-2">
                     {items.position}
                   </p>
                 </div>
@@ -186,18 +188,18 @@ const AboutUs = () => {
         <div className="flex justify-center gap-12">
           {productsData.map((items, index) => {
             return (
-              <div className="h-[180px] w-[250px] bg-white flex flex-col items-center relative top-5 my-10">
+              <div key={index} className="h-[180px] w-[250px] bg-white flex flex-col items-center relative top-5 my-10">
                 <div className="px-6 my-4">
                   <h3 className="text-1xl font-bold">{items.system}</h3>
                 </div>
                 <div className="my-0">
-                  <h3 className="text-[10px] text-unique px-6">
+                  <h3 className="text-[10px] text-text-color px-6">
                     {items.paragraph}
                   </h3>
                   <div className="px-6"></div>
                 </div>
 
-                <Button className="w-[200px] h-[38px] mt-5 flex items-center justify-center text-[14px]">
+                <Button className="w-[200px] h-[38px] text-white mt-5 flex items-center justify-center text-[14px]">
                   Learn More
                 </Button>
               </div>

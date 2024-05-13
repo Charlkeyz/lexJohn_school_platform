@@ -1,4 +1,4 @@
-import React from "react";
+
 import Navbar from "../NavBar/Navbar";
 import Footer from "../Footer/footer";
 import Button from "../Button/Button";
@@ -43,20 +43,20 @@ const ContactPage = () => {
         <div className="flex justify-center items-center mx-40">
           <div className="">
             <h2 className="text-2xl font-bold">Get in touch</h2>
-            <p className="text-xs text-unique my-4">
+            <p className="text-xs text-text-color my-4">
               Nullam egestas tellus at enim ornare tristique. Class aptent
               taciti sociosqu ad litora torquent per conubia nostra.
             </p>
           </div>
           <div className="">
-            <img cl src="/images/Images.png" alt="" />
+            <img  src="/images/Images.png" alt="" />
           </div>
         </div>
       </div>
       <div className="flex justify-center gap-12">
         {customerData.map((items, index) => {
           return (
-            <div className="w-[290px] h-[220px] bg-white relative bottom-60 flex flex-col items-center">
+            <div key={index} className="w-[290px] h-[220px] bg-white relative bottom-60 flex flex-col items-center">
               <div className="flex justify-center items-center">
                 <img className="my-4" src={items.image} alt="" />
               </div>
@@ -68,14 +68,14 @@ const ContactPage = () => {
                 {items.head}
               </div>
               <div
-                className={`text-[11px] text-unique mx-6 ${
+                className={`text-[11px] text-text-color mx-6 ${
                   index === 1 ? "relative bottom-2" : ""
                 }`}
               >
                 {items.paragraph}
               </div>
               <Button
-                className={`w-[240px] h-[38px] mt-5 flex items-center justify-center text-[14px] ${
+                className={`w-[240px] text-white h-[38px] mt-5 flex items-center justify-center text-[14px] ${
                   index === 1 ? "relative bottom-3 " : ""
                 }`}
               >
@@ -97,10 +97,10 @@ const ContactPage = () => {
           <div>
             <img src="/images/Rectangle 4081.png" />
           </div>
-          <div className="flex flex flex-col justify-center gap-6">
+          <div className="flex  flex-col justify-center gap-6">
             {addressData.map((items, index) => {
               return (
-                <div>
+                <div key={index}>
                   <div className="text-[12px] font-bold">{items.head}</div>
                   <p className="text-xs">{items.para}</p>
                 </div>

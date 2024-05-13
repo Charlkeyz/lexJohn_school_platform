@@ -9,18 +9,17 @@ export default {
         'socialIcon': '#1B2243',
         'text-color': '#88918B',
         'background': '#F6F9FC'
-        primary: "#091140",
-        secondary: "#FAAD29",
-        socialIcon: "#1B2243",
-        tertiary: "#F6F9FC",
-        unique: "#88918B",
-        special: "#FAAD29",
+
+      
+      
+        // tertiary: "#F6F9FC",
+        // unique: "#88918B",
+        // special: "#FAAD29",
         // yellow: "#FAAD29",
-        ash: "#E0E6E233",
-        primary: "#091140",
-        secondary: "#FAAD29",
-        socialIcon: "#1B2243",
-        "text-color": "#88918B",
+        // ash: "#E0E6E233",
+        // secondary: "#FAAD29",
+        // socialIcon: "#1B2243",
+        // "text-color": "#88918B",
       },
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
