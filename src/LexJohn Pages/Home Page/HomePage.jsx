@@ -12,6 +12,8 @@ import Testimonial from '../../components/Testimonial/Testimonial'
 import Navbar from '../../components/NavBar/Navbar'
 import Footer from '../../components/Footer/footer'
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion"
+import Contact from '../../components/Contact/Contact'
 
 const HomePage = () => {
     const {ref: componentRef, inView: isVisible} = useInView()
@@ -20,7 +22,12 @@ const HomePage = () => {
     <main>
         <Navbar/>
         <section className='flex flex-col justify-center items-center w-screen'>
-            <div ref={componentRef} className={`flex justify-center gap-40 items-center w-[1200px] p-20 ${isVisible ? 'animate-fadeup' : ''}`}>
+            <motion.div 
+                ref={componentRef} 
+                className='flex justify-center gap-40 items-center w-[1200px] p-20'
+                initial={{ opacity: 0, y: 50 }}
+                animate={isVisible ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}>
                 <div className='flex flex-col w-[580.5px] gap-5'>
                     <h1 className='text-4xl font-bold leading-10 w-[486px]'>Transforming Digital Solutions for a Smarter Future</h1>
                     <p className='text-text-color leading-6 text-base'>
@@ -33,11 +40,12 @@ const HomePage = () => {
                     </p>
                 </div>
                 <img src={Image1} alt="" />
-            </div>
+            </motion.div>
             <div className='w-screen h-[72px] bg-secondary flex justify-center items-center'>
                 <p className='text-white text-base font-bold leading-6'> 1000+ customers in over 20 countries in africa grow their businesses with LEXJON Technologies</p>
             </div>
-            <div ref={componentRef} className={`flex justify-center items-center w-[1200px] gap-10 p-20 ${isVisible ? 'animate-fadeup' : ''}`}>
+            <div ref={componentRef} 
+                className='flex justify-center items-center w-[1200px] gap-10 p-20'>
                 <img src={Image2} alt="" />
                 <div className='flex flex-col w-[644px] gap-5'>
                     <h1 className='text-2xl font-semibold leading-10'>About LexJon</h1>
@@ -60,7 +68,9 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div ref={componentRef} className={`flex justify-between items-center gap-24 ${isVisible ? 'animate-fadeup' : ''}`}>
+            <div ref={componentRef} 
+                className={`flex justify-between items-center gap-24 ${isVisible ? 'animate-fadeup' : ''}`}>
+
                 {
                     ArraysOfSDE.map((item, index)=> (
                         <div key={index} className='flex flex-col justify-center items-center'>
@@ -96,8 +106,11 @@ const HomePage = () => {
                 <img src={OvalBackground} alt="" className=" inset-0 w-full h-full object-cover" />
                 <div className='absolute'><Products componentRef = {componentRef} isVisible = {isVisible}/></div>
             </div>
-            <div ref={componentRef} className={`relative bottom-56 ${isVisible ? 'animate-fadeup' : ''}`}>
+            <div ref={componentRef} className={`relative ${isVisible ? 'animate-fadeup' : ''}`}>
                 <Testimonial title="Testimonials"/>  
+            </div>
+            <div className='w-screen h-[295px] '>
+                <Contact/>
             </div>
         </section>
         <Footer/>

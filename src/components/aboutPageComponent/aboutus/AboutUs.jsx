@@ -4,6 +4,10 @@ import Contact from "../../Contact/Contact";
 import Navbar from "../../NavBar/Navbar";
 import Footer from "../../Footer/footer";
 import Button from "../../Button/Button";
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer";
+
+
 
 const dummyData = [
   {
@@ -92,11 +96,17 @@ const productsData = [
 ];
 
 const AboutUs = () => {
+  const {ref: componentRef, inView: isVisible} = useInView()
+
+
   return (
     <>
       <Navbar />
-      <div className="w-screen flex flex-col">
-        {dummyData.map((items, index) => {
+      <motion.div ref={componentRef} className="w-screen flex flex-col"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.5 }}>
+          {dummyData.map((items, index) => {
           return (
             <div
             key={index}
@@ -122,7 +132,7 @@ const AboutUs = () => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
       <div className="h-[400px] bg-tertiary">
         <div className=" my-10">
           <h1 className="text-3xl font-bold flex justify-center relative top-10">

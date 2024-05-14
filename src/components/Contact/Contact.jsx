@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const contactData = [
   {
@@ -18,7 +18,7 @@ const contactData = [
 const Contact = () => {
   return (
     <>
-      <div className="my-10 border-t-2 border-yellow-400">
+      <div className="my-10 border-t-2 border-yellow-400 p-10">
         <div className="mx-40">
           <h3 className="text-1xl font-bold">Contact Us</h3>
           <p className="text-xs my-4 font-medium">
@@ -28,7 +28,7 @@ const Contact = () => {
         <div>
           {contactData.map((items, index) => {
             return (
-              <div className="flex">
+              <div key={index} className="flex">
                 <div className="flex gap-1 my-1 mx-40">
                   <div>
                     <img src={items.image} alt="" />
