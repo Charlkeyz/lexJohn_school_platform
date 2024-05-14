@@ -1,13 +1,9 @@
-
-
 import Contact from "../../Contact/Contact";
 import Navbar from "../../NavBar/Navbar";
 import Footer from "../../Footer/footer";
 import Button from "../../Button/Button";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-
 
 const dummyData = [
   {
@@ -96,23 +92,25 @@ const productsData = [
 ];
 
 const AboutUs = () => {
-  const {ref: componentRef, inView: isVisible} = useInView()
-
+  const { ref: componentRef, inView: isVisible } = useInView();
 
   return (
     <>
       <Navbar />
-      <motion.div ref={componentRef} className="w-screen flex flex-col"
+      <motion.div
+        ref={componentRef}
+        className="w-screen flex flex-col"
         initial={{ opacity: 0, y: 50 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}>
-          {dummyData.map((items, index) => {
+        transition={{ duration: 0.5 }}
+      >
+        {dummyData.map((items, index) => {
           return (
             <div
-            key={index}
+              key={index}
               className={`flex ${
                 index === 1 ? "flex-row-reverse" : "flex-row"
-              } justify-center items-center flex-row gap-10 ${
+              } justify-center items-center flex-row gap-40 ${
                 index === 0 ? "bg-tertiary" : ""
               }`}
             >
@@ -121,12 +119,14 @@ const AboutUs = () => {
                   className={`${
                     index === 0
                       ? " text-2xl font-bold my-5"
-                      : "text-1xl font-bold my-5"
+                      : "text-2xl font-bold my-5"
                   }`}
                 >
                   {items.head}
                 </h2>
-                <p className="w-[360px] text-xs text-text-color">{items.content}</p>
+                <p className="w-[360px] text-1xs text-text-color">
+                  {items.content}
+                </p>
               </div>
               <img className="w-[400px] my-10" src={items.image} alt="" />
             </div>
@@ -142,7 +142,10 @@ const AboutUs = () => {
         <div className="flex justify-center gap-12">
           {lexjonData.map((items, index) => {
             return (
-              <div key={index} className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5">
+              <div
+                key={index}
+                className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5"
+              >
                 <div className="px-20">
                   <img className="my-5" src={items.image} alt="" />
                 </div>
@@ -158,7 +161,7 @@ const AboutUs = () => {
       <div>
         <div className="flex  flex-col justify-center items-center">
           <h3 className="text-2xl font-bold my-5">Our Team</h3>
-          <p className="text-xs text-text-color my-[-12px]">
+          <p className="text-1xs text-text-color my-[-12px]">
             Meet the leaders driving LexJon success
           </p>
         </div>
@@ -198,7 +201,10 @@ const AboutUs = () => {
         <div className="flex justify-center gap-12">
           {productsData.map((items, index) => {
             return (
-              <div key={index} className="h-[180px] w-[250px] bg-white flex flex-col items-center relative top-5 my-10">
+              <div
+                key={index}
+                className="h-[180px] w-[250px] bg-white flex flex-col items-center relative top-5 my-10"
+              >
                 <div className="px-6 my-4">
                   <h3 className="text-1xl font-bold">{items.system}</h3>
                 </div>

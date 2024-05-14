@@ -1,4 +1,3 @@
-
 import Navbar from "../NavBar/Navbar";
 import Footer from "../Footer/footer";
 import Button from "../Button/Button";
@@ -40,23 +39,26 @@ const ContactPage = () => {
     <>
       <Navbar />
       <div className="w-screen bg-tertiary h-[600px] flex flex-row justify-center items-center">
-        <div className="flex justify-center items-center mx-40">
+        <div className="flex justify-center items-center mx-20">
           <div className="">
             <h2 className="text-2xl font-bold">Get in touch</h2>
-            <p className="text-xs text-text-color my-4">
+            <p className="text-1xs text-text-color my-4">
               Nullam egestas tellus at enim ornare tristique. Class aptent
               taciti sociosqu ad litora torquent per conubia nostra.
             </p>
           </div>
           <div className="">
-            <img  src="/images/Images.png" alt="" />
+            <img src="/images/Images.png" alt="" />
           </div>
         </div>
       </div>
       <div className="flex justify-center gap-12">
         {customerData.map((items, index) => {
           return (
-            <div key={index} className="w-[290px] h-[220px] bg-white relative bottom-60 flex flex-col items-center">
+            <div
+              key={index}
+              className="w-[290px] h-[220px] bg-white relative bottom-60 left-20 flex flex-col items-center"
+            >
               <div className="flex justify-center items-center">
                 <img className="my-4" src={items.image} alt="" />
               </div>
@@ -102,7 +104,7 @@ const ContactPage = () => {
               return (
                 <div key={index}>
                   <div className="text-[12px] font-bold">{items.head}</div>
-                  <p className="text-xs">{items.para}</p>
+                  <p className="text-xs mt-2">{items.para}</p>
                 </div>
               );
             })}

@@ -1,5 +1,3 @@
-
-
 const contactData = [
   {
     image: "/images/message.png",
@@ -20,8 +18,8 @@ const Contact = () => {
     <>
       <div className="my-10 border-t-2 border-yellow-400 p-10">
         <div className="mx-40">
-          <h3 className="text-1xl font-bold">Contact Us</h3>
-          <p className="text-xs my-4 font-medium">
+          <h3 className="text-2xl font-bold">Contact Us</h3>
+          <p className="text-1xs my-4 font-medium">
             Have questions or need assistance? Feel free to reach out to us!
           </p>
         </div>
@@ -33,7 +31,7 @@ const Contact = () => {
                   <div>
                     <img src={items.image} alt="" />
                   </div>
-                  <p className="text-xs">{items.content}</p>
+                  <p className="text-1xs">{items.content}</p>
                 </div>
               </div>
             );
