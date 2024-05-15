@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     
-        <nav className="w-screen bg-primary mx-auto flex h-[100px] justify-between items-center ">
+        <nav className="w-screen bg-primary mx-auto flex h-[100px] justify-between items-center">
             <div className='pl-36'>
                 <img src={Logo} alt="" />    
             </div>
