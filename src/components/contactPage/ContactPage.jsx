@@ -88,28 +88,74 @@ const ContactPage = () => {
         })}
       </div>
 
-      <div className="w-screen h-[250px] mb-16">
-        {/* <div className=" ">
-          <h3 className="w-[300px] text-1xl text-center">
-            Connect with our Head office
-          </h3>
-        </div> */}
-
-        <div className="h-[100px] flex justify-center items-center gap-6">
-          <div>
-            <img src="/images/Rectangle 4081.png" />
-          </div>
-          <div className="flex  flex-col justify-center gap-6">
-            {addressData.map((items, index) => {
-              return (
-                <div key={index}>
-                  <div className="text-[12px] font-bold">{items.head}</div>
-                  <p className="text-xs mt-2">{items.para}</p>
-                </div>
-              );
-            })}
+      <div className="bg-w-screen h-[400px]  relative bottom-40">
+        <h2 className="text-2xl font-bold text-center mb-4">
+          Connect with our Head office
+        </h2>
+        <div className="w-screen flex flex-col items-center h-[600px]">
+          <div className="mt-4 flex justify-center items-center">
+            <div className="pl-6 pr-6 h-[620px] bg-tertiary">
+              <h2 className="text-2xl font-bold mt-8">Contact Form</h2>
+              <p className="text-1xl text-primary mt-2">
+                We're here to answer your questions.
+              </p>
+              <p className="text-[14px] mt-6">Full Name</p>
+              <input
+                type="text"
+                className=" w-[350px] h-[35px] outline-none mt-1"
+              />
+              <p className="text-[14px] mt-4">Contact Number</p>
+              <input
+                type="text"
+                className=" w-[350px] h-[30px] outline-none mt-1"
+              />
+              <p className="text-[14px] mt-4">Email Address</p>
+              <input
+                type="text"
+                className=" w-[350px] h-[30px] outline-none mt-1"
+              />
+              <p className="text-[14px] mt-4">Subject</p>
+              <input
+                type="text"
+                className=" w-[350px] h-[40px] outline-none mt-1"
+              />
+              <p className="text-[14px] mt-4">Message</p>
+              <input
+                className=" w-[350px] h-[80px] outline-none mt-1 "
+                type="text"
+                placeholder="    Please type message"
+              />
+              <div className="mt-6 flex justify-center">
+                <Button className=" h-[10px] text-sx text-white pl-8 pr-8 pb-8">
+                  Send
+                </Button>
+              </div>
+            </div>
+            <div className="w-[300px] h-[620px] border right">
+              <div className="flex  flex-col justify-center gap-6 mt-40">
+                {addressData.map((items, index) => {
+                  return (
+                    <div key={index}>
+                      <div className="text-[13px] font-bold mb-4 flex justify-center">
+                        {items.head}
+                      </div>
+                      <p
+                        className={`text-[13px] mt-2 flex justify-center ${
+                          index === 0 ? "text-yellow" : ""
+                        }`}
+                      >
+                        {items.para}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div className="mt-40 mb-10">
+        <img className="w-screen h-[500px]" src="/images/Rectangle 4081.png" />
       </div>
       <Footer />
     </>

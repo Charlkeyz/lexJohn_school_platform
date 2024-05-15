@@ -14,8 +14,8 @@ export default {
         special: "#FAAD29",
         ash: "#E0E6E233",
         "text-color": "#88918B",
+        yellow: "#FAAD29",
 
-        // yellow: "#FAAD29",
         // secondary: "#FAAD29",
         // socialIcon: "#1B2243",
       },
