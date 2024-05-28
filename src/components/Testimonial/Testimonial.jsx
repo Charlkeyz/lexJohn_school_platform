@@ -49,7 +49,7 @@ const Testimonial = ({title}) => {
                 Testimonials.map((item, index)=> {
                     const {img, body, heading, name} = item
                     return(
-                        <div key={index} className="w-[250px] h-[234px]  flex item-center gap-10 bg-white rounded-[10px] shadow-3xl">
+                        <div key={index} className="w-[250px] h-[234px]  flex item-center bg-white rounded-[10px] shadow-3xl">
                             <div className="flex gap-5">
                                 <img src={img} alt="" />
                                 <div className="flex flex-col gap-3 ">
