@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import  './Home.css'
 import Button from '../../components/Button/Button'
@@ -11,23 +12,38 @@ import Products from '../../components/Our products/Products'
 import Testimonial from '../../components/Testimonial/Testimonial'
 import Navbar from '../../components/NavBar/Navbar'
 import Footer from '../../components/Footer/footer'
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion"
+// import { useInView } from "react-intersection-observer";
+import { motion, useInView, useAnimation} from "framer-motion"
 import Contact from '../../components/Contact/Contact'
+import { useEffect, useRef } from 'react'
 
 const HomePage = () => {
-    const {ref: componentRef, inView: isVisible} = useInView()
+    
+    const {innerWidth: Width} = window
+    const ref = useRef()
+    const isInView = useInView(ref)
+    const variants = {
+        hidden: { opacity: 0, y: 50},
+        visible: {opacity: 1, y: 0}
+    }
+    const mainControls = useAnimation()
+    useEffect(()=> {
+        if(isInView){
+            mainControls.start("visible")
+        }
+    },[isInView, mainControls])
     
   return (
     <main>
         <Navbar/>
         <section className='flex flex-col justify-center items-center w-screen'>
             <motion.div 
-                ref={componentRef} 
-                className='flex justify-center gap-40 items-center w-[1200px] p-20'
-                initial={{ opacity: 0, y: 50 }}
-                animate={isVisible ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}>
+                ref={ref}
+                className='flex justify-center gap-40 items-center w-[1200px] p-20 md:flex-wrap'
+                variants={variants}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 0.8, delay: 0.50 }}>
                 <div className='flex flex-col w-[580.5px] gap-5'>
                     <h1 className='text-4xl font-bold leading-10 w-[486px]'>Transforming Digital Solutions for a Smarter Future</h1>
                     <p className='text-text-color leading-6 text-base'>
@@ -44,8 +60,13 @@ const HomePage = () => {
             <div className='w-screen h-[72px] bg-secondary flex justify-center items-center'>
                 <p className='text-white text-base font-bold leading-6'> 1000+ customers in over 20 countries in africa grow their businesses with LEXJON Technologies</p>
             </div>
-            <div ref={componentRef} 
-                className='flex justify-center items-center w-[1200px] gap-10 p-20'>
+            <motion.div
+                ref={ref}
+                className='flex justify-center items-center w-[1200px] gap-10 p-20 md:flex-wrap'
+                variants={variants}
+                initial="hidden"
+                animate={mainControls}
+                transition={{ duration: 0.8, delay: 0.50 }}>
                 <img src={Image2} alt="" />
                 <div className='flex flex-col w-[644px] gap-5'>
                     <h1 className='text-2xl font-semibold leading-10'>About LexJon</h1>
@@ -67,9 +88,9 @@ const HomePage = () => {
                         </Button>
                     </div>
                 </div>
-            </div>
-            <div ref={componentRef} 
-                className={`flex justify-between items-center gap-24 ${isVisible ? 'animate-fadeup' : ''}`}>
+            </motion.div>
+            <div 
+                className={`flex justify-between items-center gap-24`}>
 
                 {
                     ArraysOfSDE.map((item, index)=> (
@@ -80,7 +101,7 @@ const HomePage = () => {
                     ))
                 }
             </div>
-            <div ref={componentRef} className={`my-10 flex flex-col items-center gap-5 ${isVisible ? 'animate-fadeup' : ''}`}>
+            <div className={`my-10 flex flex-col items-center gap-5`}>
                 <img src={FeaturedCourseImg} alt="" />
                 <div className="flex flex-col gap-4">
                     <p className='text-text-color text-lg font-normal leading-6'>Our team of experts offer a range of services to meet up your IT needs. We specialize in:</p>
@@ -98,15 +119,15 @@ const HomePage = () => {
                     </div>
             </div>
 
-            <div ref={componentRef} className={`${isVisible ? 'animate-fadeup' : ''}`}>
+            <div>
                 <Companies/>
             </div>
 
             <div className="relative w-full h-full flex flex-col justify-center items-center">
                 <img src={OvalBackground} alt="" className=" inset-0 w-full h-full object-cover" />
-                <div className='absolute'><Products componentRef = {componentRef} isVisible = {isVisible}/></div>
+                <div className='absolute'><Products/></div>
             </div>
-            <div ref={componentRef} className={`relative ${isVisible ? 'animate-fadeup' : ''}`}>
+            <div className={`relative`}>
                 <Testimonial title="Testimonials"/>  
             </div>
             <div className='w-screen h-[295px] '>
