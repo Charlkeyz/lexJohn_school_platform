@@ -1,6 +1,6 @@
 import Companies from "../../components/6.3k trusted companies/companies"
 import Footer from "../../components/Footer/footer"
-import Navbar from "../../components/NavBar/Navbar"
+// import Navbar from "../../components/NavBar/Navbar"
 import OurExpertise from "../../components/Our Expertise/OurExpertise"
 import Testimonial from "../../components/Testimonial/Testimonial"
 import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs"
@@ -10,7 +10,7 @@ import ServiceImg from '/LexJohn_Images/homepages images/serviceImg1.png'
 const ServicePage = () => {
   return (
     <main>
-        <Navbar/>
+        {/* <Navbar/> */}
         <section className="flex flex-col justify-center items-center w-screen">
           <div className="flex w-[1065px] h-[398px] justify-center items-center relative top-24">
             <div className="flex flex-col gap-10">

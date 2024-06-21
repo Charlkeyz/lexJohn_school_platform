@@ -1,4 +1,4 @@
-import Navbar from "../NavBar/Navbar";
+// import Navbar from "../NavBar/Navbar";
 import Footer from "../Footer/footer";
 import Button from "../Button/Button";
 
@@ -37,7 +37,7 @@ const addressData = [
 const ContactPage = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="w-screen bg-tertiary h-[600px] flex flex-row justify-center items-center">
         <div className="flex justify-center items-center mx-20">
           <div className="">

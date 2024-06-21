@@ -1,5 +1,5 @@
 import Contact from "../../Contact/Contact";
-import Navbar from "../../NavBar/Navbar";
+// import Navbar from "../../NavBar/Navbar";
 import Footer from "../../Footer/footer";
 import Button from "../../Button/Button";
 import { motion } from "framer-motion";
@@ -96,7 +96,7 @@ const AboutUs = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <motion.div
         ref={componentRef}
         className="w-screen flex flex-col"

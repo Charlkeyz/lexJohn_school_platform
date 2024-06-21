@@ -10,7 +10,7 @@ import FeaturedCourseImg from '/LexJohn_Images/homepages images/Featured Courses
 import Companies from '../../components/6.3k trusted companies/companies'
 import Products from '../../components/Our products/Products'
 import Testimonial from '../../components/Testimonial/Testimonial'
-import Navbar from '../../components/NavBar/Navbar'
+// import Navbar from '../../components/NavBar/Navbar'
 import Footer from '../../components/Footer/footer'
 // import { useInView } from "react-intersection-observer";
 import { motion, useInView, useAnimation} from "framer-motion"
@@ -19,67 +19,71 @@ import { useEffect, useRef } from 'react'
 
 const HomePage = () => {
     
-    const {innerWidth: Width} = window
-    const ref = useRef()
+    // const {innerWidth: Width} = window
+    const ref = useRef(null)
     const isInView = useInView(ref)
-    const variants = {
-        hidden: { opacity: 0, y: 50},
-        visible: {opacity: 1, y: 0}
-    }
+    
     const mainControls = useAnimation()
     useEffect(()=> {
         if(isInView){
             mainControls.start("visible")
         }
-    },[isInView, mainControls])
+    },[isInView])
+    
     
   return (
     <main>
-        <Navbar/>
-        <section className='flex flex-col justify-center items-center w-screen'>
+        {/* <Navbar/> */}
+        <section className='sm:flex flex-col justify-center items-center w-screen'>
             <motion.div 
                 ref={ref}
-                className='flex justify-center gap-40 items-center w-[1200px] p-20 md:flex-wrap'
-                variants={variants}
+                className='sm:flex justify-center gap-40 items-center sm:p-20 w-screen mt-20'
+                variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
                 initial="hidden"
                 animate={mainControls}
-                transition={{ duration: 0.8, delay: 0.50 }}>
-                <div className='flex flex-col w-[580.5px] gap-5'>
-                    <h1 className='text-4xl font-bold leading-10 w-[486px]'>Transforming Digital Solutions for a Smarter Future</h1>
-                    <p className='text-text-color leading-6 text-base'>
+                transition={{ duration: 0.8, delay: 0.25 }}>
+                <div className='sm:flex flex-col sm:w-[580.5px] gap-5 mt-5 w-screen p-10'>
+                    <h1 className='sm:text-4xl font-bold leading-10 sm:w-[486px] text-3xl'>Transforming Digital Solutions for a Smarter Future</h1>
+                    <p className='text-text-color leading-6 sm:text-base mt-3 text-sm'>
                         Leading the way of software development digital marketing, and digital education.
                         We create innovative solutions that empower businesses and educational institute
                     </p>
-                    <Button className='w-[144px] text-white'>Get in Touch</Button>
-                    <p className='text-text-color leading-6 text-base'>
+                    <Button className='w-[144px] text-white mt-3'>Get in Touch</Button>
+                    <p className='text-text-color leading-6 sm:text-base text-sm mt-3'>
                         Get in touch to learn how we can help your businesses or educational institution thrive. 
                     </p>
                 </div>
-                <img src={Image1} alt="" />
+                <img src={Image1} alt="" className='p-5'/>
             </motion.div>
-            <div className='w-screen h-[72px] bg-secondary flex justify-center items-center'>
-                <p className='text-white text-base font-bold leading-6'> 1000+ customers in over 20 countries in africa grow their businesses with LEXJON Technologies</p>
+            <div className='w-screen h-[72px] bg-secondary flex justify-center items-center mt-10'>
+                <p className='text-white sm:text-base font-bold leading-6 text-sm p-3'> 1000+ customers in over 20 countries in africa grow their businesses with LEXJON Technologies</p>
             </div>
             <motion.div
                 ref={ref}
-                className='flex justify-center items-center w-[1200px] gap-10 p-20 md:flex-wrap'
-                variants={variants}
+                className='sm:flex justify-center items-center sm:w-[1200px] gap-10 sm:p-20 p-5 w-screen mt-20'
+                variants={{
+                    hidden: { opacity: 0, x: 50 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
                 initial="hidden"
                 animate={mainControls}
-                transition={{ duration: 0.8, delay: 0.50 }}>
+                transition={{ duration: 0.8, delay: 0.70 }}>
                 <img src={Image2} alt="" />
-                <div className='flex flex-col w-[644px] gap-5'>
+                <div className='flex flex-col sm:w-[644px] sm:gap-5 mt-5'>
                     <h1 className='text-2xl font-semibold leading-10'>About LexJon</h1>
-                    <p className='text-text-color leading-6 text-base'>LexJon is a premier IT firm specializing in innovative software development,
+                    <p className='text-text-color leading-6 sm:text-base text-sm'>LexJon is a premier IT firm specializing in innovative software development,
                         cutting-edge digital marketing and comprehensive digital education solutions.
                         Our mission is to deliver transformative technology solutions that thrive success
                         for businesses.
                     </p>
-                    <p className='text-text-color leading-6 text-base'>
+                    <p className='text-text-color leading-6 sm:text-base text-sm mt-2'>
                         Get a Demo to learn about our premium software, 
                         or get started with our full suite of free tools and upgrade as you grow.
                     </p>
-                    <div className='flex gap-8'>
+                    <div className='flex gap-8 mt-5'>
                         <Button className='w-[139px] h-[48px] text-white text-base font-bold'>
                             Get a demo
                         </Button>
@@ -90,27 +94,27 @@ const HomePage = () => {
                 </div>
             </motion.div>
             <div 
-                className={`flex justify-between items-center gap-24`}>
+                className={`flex justify-between items-center sm:gap-24 mt-10`}>
 
                 {
                     ArraysOfSDE.map((item, index)=> (
-                        <div key={index} className='flex flex-col justify-center items-center'>
-                            <img src={item.img} alt="" />
-                            <h1 className='text-2xl font-semibold leading-10'>{item.title}</h1>
+                        <div key={index} className='sm:flex flex-col justify-center items-center p-5'>
+                            <img src={item.img} alt="" className='w-[50px]'/>
+                            <h1 className='sm:text-2xl font-semibold sm:leading-10'>{item.title}</h1>
                         </div>
                     ))
                 }
             </div>
-            <div className={`my-10 flex flex-col items-center gap-5`}>
+            <div className={`my-10 flex flex-col items-center gap-5 p-5 w-screen`}>
                 <img src={FeaturedCourseImg} alt="" />
                 <div className="flex flex-col gap-4">
-                    <p className='text-text-color text-lg font-normal leading-6'>Our team of experts offer a range of services to meet up your IT needs. We specialize in:</p>
-                    <p className='text-text-color text-lg font-normal leading-6'><span className='text-secondary'>Software Development: </span>Customs software solutions tailored to your business requirements</p>
-                    <p className='text-text-color text-lg font-normal leading-6'><span className='text-secondary'>Digital Marketing: </span>Comprehensive digital marketing strategies to boost your brand visibility.</p>
-                    <p className='text-text-color text-lg font-normal leading-6'><span className='text-secondary'>Digital Education: </span> Innovative educational software and platforms designed for effective learning</p>
+                    <p className='text-text-color sm:text-lg font-normal leading-6 text-sm'>Our team of experts offer a range of services to meet up your IT needs. We specialize in:</p>
+                    <p className='text-text-color sm:text-lg font-normal leading-6 text-sm'><span className='text-secondary'>Software Development: </span>Customs software solutions tailored to your business requirements</p>
+                    <p className='text-text-color sm:text-lg font-normal leading-6 text-sm'><span className='text-secondary'>Digital Marketing: </span>Comprehensive digital marketing strategies to boost your brand visibility.</p>
+                    <p className='text-text-color sm:text-lg font-normal leading-6 text-sm'><span className='text-secondary'>Digital Education: </span> Innovative educational software and platforms designed for effective learning</p>
                 </div>
-                    <div className='flex gap-8'>
-                        <Button className='w-[139px] h-[48px] text-white text-base font-bold'>
+                    <div className='flex gap-5 p-10'>
+                        <Button className='w-[129px] h-[48px] text-white text-base font-bold'>
                             Get a demo
                         </Button>
                         <Button className='w-[198px] h-[48px] bg-white text-secondary text-base font-bold border border-secondary hover:bg-secondary hover:text-white'>
@@ -119,13 +123,13 @@ const HomePage = () => {
                     </div>
             </div>
 
-            <div>
+            <div className='my-10'>
                 <Companies/>
             </div>
 
-            <div className="relative w-full h-full flex flex-col justify-center items-center">
-                <img src={OvalBackground} alt="" className=" inset-0 w-full h-full object-cover" />
-                <div className='absolute'><Products/></div>
+            <div className="relative w-full h-full flex flex-col justify-center items-center ">
+                <img src={OvalBackground} alt="" className="absolute sm:relative inset-0 w-full h-full object-cover bottom-20" />
+                <div className='sm:absolute'><Products/></div>
             </div>
             <div className={`relative`}>
                 <Testimonial title="Testimonials"/>  

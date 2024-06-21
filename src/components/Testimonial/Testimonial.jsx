@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Testimonials } from "../../ArrayOfData/Testimonial"
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -8,9 +9,12 @@ const Testimonial = ({title}) => {
     var settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 2000,
         slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 4000,
         slidesToScroll: 1,
+        cssEase: "linear",
         responsive: [
           {
             breakpoint: 1024,
@@ -43,7 +47,7 @@ const Testimonial = ({title}) => {
     <div className="flex flex-col justify-center items-center gap-10 w-3/4 m-auto mb-32">
         <h1 className="text-2xl font-semibold leading-10">{title}</h1>
         <div className="flex justify-center flex-wrap items-center mt-5">
-            <Slider {...settings} className="w-[1350px] ">
+            <Slider {...settings} className="sm:w-[1350px] w-screen">
             
             {
                 Testimonials.map((item, index)=> {

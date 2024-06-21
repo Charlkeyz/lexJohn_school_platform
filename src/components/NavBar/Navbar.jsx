@@ -4,6 +4,7 @@ import Button from '../Button/Button'
 import Logo from '/LexJohnLogo/LexJohnLogo.png'
 import { Link, useLocation } from 'react-router-dom'
 import { VscThreeBars } from "react-icons/vsc";
+import { GrClose } from "react-icons/gr";
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -17,23 +18,28 @@ const Navbar = () => {
     const toggleBar = () => {
         setIsOpen(!isOpen)
     }
+    const closeMenu = () => {
+        setIsOpen(false)
+    }
 
 
   return (
     
         <nav 
-            className="w-screen bg-primary flex h-[100px] justify-between items-center 
-            md:flex-col md:justify-normal md:items-start md:pt-5  ">
-            <div className='md:flex md:justify-between md:items-center md:w-full md:px-5'>
-                <div className='pl-36 md:pl-0'>
+            className={`w-screen bg-primary sm:flex sm:h-auto sm:w-full z-20 left-0 right-0 top-0 py-5 justify-between items-center overflow-hidden fixed`}>
+            <div className='flex justify-between items-center w-screen' >
+                <div className='sm:pl-36 pl-5'>
                     <img src={Logo} alt="" className='w-[100px]' />    
                 </div>
-                <div className='md:flex md:justify-center md:items-center hidden' onClick={toggleBar}>
-                    <VscThreeBars className='text-white text-3xl '/>
+                <div className='sm:hidden pr-5' onClick={toggleBar}>
+                    {isOpen ? (
+                        <GrClose  className={`text-white text-3xl ${isOpen ? "icon-transition": "icon-transition-close"}`}/>) : (
+                        <VscThreeBars className={`text-white text-3xl ${!isOpen ? "icon-transition": "icon-transition-close"}`}/>
+
+                    )}
                 </div>
             </div>
-            <ul className={`flex justify-center items-center pr-10
-                 md:flex-col md:pr-0 md:gap-10 md:mt-5 md:bg-primary md:w-screen md:${isOpen ? "flex" : "hidden"} md:relative top-auto left-auto transition-all duration-300 ease-in-out`}>
+            <ul className="sm:flex justify-between space-x-16 items-center pr-10 hidden">
                 {
                     NavRoutes.map((route, index)=> (
                         <li key={index}>
@@ -44,8 +50,23 @@ const Navbar = () => {
                         
                     ))
                 }
-                 <Button className='text-white md:text-xs md:ml-3'>Get in touch</Button>
+                 <Button className='text-white w-[100px] text-xs'>Get in touch</Button>
             </ul>
+            {/* mobile view */}
+            {isOpen ? 
+            <ul className={`sm:hidden flex-col space-y-5 pl-7 pt-5  ${isOpen ? "menu-transition" : "menu-transition-close"}`}>
+            {
+                NavRoutes.map((route, index)=> (
+                    <li key={index}>
+                        <Link to={route.path} className={` ${isActive(route.path) ? "text-secondary" : "text-white"}`} onClick={closeMenu}>
+                            {route.label}
+                        </Link>  
+                    </li>
+                    
+                ))
+            }
+             <Button className='text-white w-[100px] text-xs'>Get in touch</Button>
+        </ul> : null }
            
 
         </nav>

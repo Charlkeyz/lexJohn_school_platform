@@ -5,12 +5,14 @@ import AboutUs from "./components/aboutPageComponent/aboutus/AboutUs";
 import ContactPage from "./components/contactPage/ContactPage";
 import ServicePage from './LexJohn Pages/Service page/ServicePage';
 import CareerPage from './LexJohn Pages/Career Page/CareerPage';
+import Navbar from "./components/NavBar/Navbar";
 
 
 function App() {
   return (
     <>
       <HashRouter hashType="hashbang">
+        <Navbar/>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/services' element={<ServicePage/>}/>

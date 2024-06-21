@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Button from "../../components/Button/Button"
 import Footer from "../../components/Footer/footer"
-import Navbar from "../../components/NavBar/Navbar"
+// import Navbar from "../../components/NavBar/Navbar"
 import CareerImg1 from '/LexJohn_Images/homepages images/Frame 1000001511.png'
 import CareerImg2 from '/LexJohn_Images/homepages images/Union.png'
 import tickerIcon from '/LexJohn_Images/homepages images/Iconsax.svg'
@@ -13,7 +13,7 @@ import tickerIcon from '/LexJohn_Images/homepages images/Iconsax.svg'
 const CareerPage = () => {
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <div className="flex justify-center items-center bg-background">
             <div className="flex flex-col w-[486px] gap-10">
                 <h1 className="font-bold text-[40px] leading-[48px]">Let's grow together</h1>

@@ -12,3 +12,7 @@
 .animate-fadeup > *{
     animation: fadeup 2s ease-out forwards;
 } */
+.slick-slide div{
+    margin: 0px 0px;
+    padding: 7px;
+}
