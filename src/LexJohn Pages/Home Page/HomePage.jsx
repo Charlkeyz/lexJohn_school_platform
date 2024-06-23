@@ -83,7 +83,7 @@ const HomePage = () => {
                         Get a Demo to learn about our premium software, 
                         or get started with our full suite of free tools and upgrade as you grow.
                     </p>
-                    <div className='flex gap-8 mt-5'>
+                    <div className='flex sm:gap-8 gap-3 mt-5'>
                         <Button className='w-[139px] h-[48px] text-white text-base font-bold'>
                             Get a demo
                         </Button>
