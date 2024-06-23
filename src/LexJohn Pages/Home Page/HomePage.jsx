@@ -34,7 +34,7 @@ const HomePage = () => {
   return (
     <main>
         {/* <Navbar/> */}
-        <section className='sm:flex flex-col justify-center items-center w-screen'>
+        <section className='sm:flex flex-col justify-center items-center w-screen overflow-hidden'>
             <motion.div 
                 ref={ref}
                 className='sm:flex justify-center gap-40 items-center sm:p-20 w-screen mt-20'
