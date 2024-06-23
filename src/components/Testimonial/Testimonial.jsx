@@ -57,11 +57,11 @@ const Testimonial = ({title}) => {
                             <div className="flex gap-5">
                                 <img src={img} alt="" />
                                 <div className="flex flex-col gap-3 ">
-                                    <h1 className="text-2xl font-semibold leading-6">{name}</h1>
+                                    <h1 className="sm:text-2xl text-xl font-semibold leading-6">{name}</h1>
                                     <p className="text-xs font-normal leading-4">{heading}</p>
                                 </div>
                             </div>
-                            <p className="text-base font-normal leading-6 w-[342px] text-black mt-6 ml-8">{body}</p>
+                            <p className="sm:text-base text-sm font-normal leading-7 w-[342px] text-black mt-5 sm:ml-10 ml-2">{body}</p>
                         </div>
                     )
                 })

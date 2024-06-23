@@ -128,7 +128,7 @@ const HomePage = () => {
             </div>
 
             <div className="relative w-full h-full flex flex-col justify-center items-center ">
-                <img src={OvalBackground} alt="" className="absolute sm:relative inset-0 w-full h-full object-cover bottom-20" />
+                <img src={OvalBackground} alt="" className="absolute sm:relative  inset-0 w-full h-full object-cover bottom-20" />
                 <div className='sm:absolute'><Products/></div>
             </div>
             <div className={`relative`}>

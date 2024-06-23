@@ -16,18 +16,18 @@ const contactData = [
 const Contact = () => {
   return (
     <>
-      <div className="my-10 border-t-2 border-yellow-400 p-10">
-        <div className="mx-40">
+      <div className="sm:my-10 border-t-2 border-yellow-400 p-10">
+        <div className="sm:mx-40">
           <h3 className="text-2xl font-bold">Contact Us</h3>
-          <p className="text-1xs my-4 font-medium">
+          <p className="text-1xs sm:my-4 my-2 font-medium">
             Have questions or need assistance? Feel free to reach out to us!
           </p>
         </div>
-        <div>
+        <div className="">
           {contactData.map((items, index) => {
             return (
               <div key={index} className="flex">
-                <div className="flex gap-1 my-1 mx-40">
+                <div className="flex gap-1 sm:my-1 my-3 sm:mx-40">
                   <div>
                     <img src={items.image} alt="" />
                   </div>
