@@ -61,7 +61,7 @@ const Testimonial = ({title}) => {
                                     <p className="text-xs font-normal leading-4">{heading}</p>
                                 </div>
                             </div>
-                            <p className="sm:text-base text-sm font-normal leading-7 w-[342px] text-black mt-5 sm:ml-10 ml-2">{body}</p>
+                            <p className="sm:text-base text-sm font-normal leading-7 w-[342px] text-black mt-5 sm:ml-10 ml-2 p-2">{body}</p>
                         </div>
                     )
                 })

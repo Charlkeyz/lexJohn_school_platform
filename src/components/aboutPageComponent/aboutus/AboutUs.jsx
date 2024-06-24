@@ -99,7 +99,7 @@ const AboutUs = () => {
       {/* <Navbar /> */}
       <motion.div
         ref={componentRef}
-        className="w-screen flex flex-col"
+        className="w-screen flex flex-col mt-20"
         initial={{ opacity: 0, y: 50 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
@@ -109,12 +109,12 @@ const AboutUs = () => {
             <div
               key={index}
               className={`flex ${
-                index === 1 ? "flex-row-reverse" : "flex-row"
-              } justify-center items-center flex-row gap-40 ${
+                index === 1 ? "sm:flex-row-reverse" : "sm:flex-row flex-col"
+              } justify-center items-center sm:flex-row flex-col sm:gap-40 ${
                 index === 0 ? "bg-tertiary" : ""
               }`}
             >
-              <div className="">
+              <div className="text-center sm:text-left">
                 <h2
                   className={`${
                     index === 0
@@ -128,18 +128,18 @@ const AboutUs = () => {
                   {items.content}
                 </p>
               </div>
-              <img className="w-[400px] my-10" src={items.image} alt="" />
+              <img className="sm:w-[400px] my-10 p-5"  src={items.image} alt="" />
             </div>
           );
         })}
       </motion.div>
-      <div className="h-[400px] bg-tertiary">
-        <div className=" my-10">
-          <h1 className="text-3xl font-bold flex justify-center relative top-10">
+      <div className="sm:h-[400px] h-screen bg-tertiary">
+        <div className=" sm:my-10">
+          <h1 className="sm:text-3xl text-2xl pt-5 font-bold flex justify-center sm:relative top-10">
             LexJon By the Numbers
           </h1>
         </div>
-        <div className="flex justify-center gap-12">
+        <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-12 gap-7">
           {lexjonData.map((items, index) => {
             return (
               <div
@@ -165,7 +165,7 @@ const AboutUs = () => {
             Meet the leaders driving LexJon success
           </p>
         </div>
-        <div className="flex justify-center gap-4 my-10">
+        <div className="flex sm:flex-row flex-col justify-center items-center gap-4 my-10">
           {ourTeamData.map((items, index) => {
             return (
               <div key={index}>
