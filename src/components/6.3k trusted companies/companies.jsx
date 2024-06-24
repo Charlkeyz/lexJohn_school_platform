@@ -13,7 +13,7 @@ const Companies = ({className, text_white}) => {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 3,
     autoplay: true,
     autoplaySpeed: 4000,

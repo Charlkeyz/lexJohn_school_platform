@@ -9,7 +9,7 @@ const Testimonial = ({title}) => {
     var settings = {
         dots: true,
         infinite: true,
-        speed: 2000,
+        speed: 500,
         slidesToShow: 3,
         autoplay: true,
         autoplaySpeed: 4000,
@@ -61,7 +61,7 @@ const Testimonial = ({title}) => {
                                     <p className="text-xs font-normal leading-4">{heading}</p>
                                 </div>
                             </div>
-                            <p className="sm:text-base text-sm font-normal leading-7 w-[342px] text-black mt-5 sm:ml-10 ml-2 p-2">{body}</p>
+                            <p className="sm:text-base text-sm font-normal leading-7 w-[342px] text-black sm:mt-2 mt-5 sm:ml-10 ml-2 p-2">{body}</p>
                         </div>
                     )
                 })
