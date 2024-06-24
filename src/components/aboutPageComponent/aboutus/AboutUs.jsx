@@ -4,6 +4,10 @@ import Footer from "../../Footer/footer";
 import Button from "../../Button/Button";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Slider from "react-slick/lib/slider";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 const dummyData = [
   {
@@ -90,6 +94,43 @@ const productsData = [
     button: "Learn More",
   },
 ];
+var settings = {
+  dots: true,
+  infinite: true,
+  speed: 2000,
+  slidesToShow: 3,
+  autoplay: true,
+  autoplaySpeed: 4000,
+  slidesToScroll: 1,
+  cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
+
 
 const AboutUs = () => {
   const { ref: componentRef, inView: isVisible } = useInView();
@@ -188,9 +229,9 @@ const AboutUs = () => {
           <div className="w-[10px] border-[0.75px] bg-yellow"></div>
         </div> */}
       </div>
-      <Contact className="mb-10"></Contact>
+      <Contact className="mb-10"/>
       <div className="h-[400px] bg-primary">
-        <div className=" my-10 relative top-14">
+        <div className=" my-10 pt-5">
           <h1 className="text-1xl text-white font-medium flex justify-center">
             LexJon Products
           </h1>
@@ -198,29 +239,33 @@ const AboutUs = () => {
             Discover our industry-leading software solutions
           </p>
         </div>
-        <div className="flex justify-center gap-12">
-          {productsData.map((items, index) => {
-            return (
-              <div
-                key={index}
-                className="h-[180px] w-[250px] bg-white flex flex-col items-center relative top-5 my-10"
-              >
-                <div className="px-6 my-4">
-                  <h3 className="text-1xl font-bold">{items.system}</h3>
-                </div>
-                <div className="my-0">
-                  <h3 className="text-[10px] text-text-color px-6">
-                    {items.paragraph}
-                  </h3>
-                  <div className="px-6"></div>
-                </div>
+        <div className="flex justify-center items-center gap-12 mt-10 ">
+          <Slider {...settings} className="w-[331px] sm:w-[1000px] h-[286px] overflow-hidden">
+            {productsData.map((items, index) => {
+              return (
+                <div
+                  key={index}
+                  className="h-[286px] w-[331px] bg-white flex justify-center items-center"
+                >
+                  <div className="flex flex-col justify-center items-center p-10">
+                        <div className="">
+                          <h3 className="text-2xl font-bold leading-10">{items.system}</h3>
+                        </div>
+                        <div className="my-0">
+                          <h3 className="text-[12px] text-text-color leading-6">
+                            {items.paragraph}
+                          </h3>
+                          <div className="px-6"></div>
+                        </div>
 
-                <Button className="w-[200px] h-[38px] text-white mt-5 flex items-center justify-center text-[14px]">
-                  Learn More
-                </Button>
-              </div>
-            );
-          })}
+                        <Button className="w-[266px] h-[48px] text-white mt-5 flex items-center justify-center text-[14px]">
+                          Learn More
+                        </Button>
+                      </div>
+                  </div>
+              );
+            })}
+          </Slider>
         </div>
       </div>
       <Footer />

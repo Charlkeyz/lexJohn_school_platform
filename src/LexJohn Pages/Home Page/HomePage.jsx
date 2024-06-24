@@ -134,7 +134,7 @@ const HomePage = () => {
             <div className={`relative`}>
                 <Testimonial title="Testimonials"/>  
             </div>
-            <div className='w-screen h-[295px] '>
+            <div className='w-screen h-[295px] mb-10 '>
                 <Contact/>
             </div>
         </section>
