@@ -45,7 +45,7 @@ const OurExpertise = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-10 w-3/4 m-auto">
         <div className="flex justify-center items-center mt-5">
-            <Slider {...settings} className="w-[1350px] ">
+            <Slider {...settings} className="sm:w-[1350px] w-screen ">
             {
                 OurExpertiseArray.map((item, index)=> {
                     const {img, body, name, arrow} = item

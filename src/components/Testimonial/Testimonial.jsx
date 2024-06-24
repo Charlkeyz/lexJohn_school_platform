@@ -44,7 +44,7 @@ const Testimonial = ({title}) => {
       };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 w-3/4 m-auto mb-32 ">
+    <div className="flex flex-col justify-center items-center sm:gap-10 w-3/4 m-auto mb-32 ">
         <h1 className="text-2xl font-semibold leading-10">{title}</h1>
         <div className="flex justify-center flex-wrap items-center mt-5">
             <Slider {...settings} className="sm:w-[1350px] w-screen ">
