@@ -6,6 +6,7 @@ import ContactPage from "./components/contactPage/ContactPage";
 import ServicePage from './LexJohn Pages/Service page/ServicePage';
 import CareerPage from './LexJohn Pages/Career Page/CareerPage';
 import Navbar from "./components/NavBar/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
@@ -13,13 +14,15 @@ function App() {
     <>
       <HashRouter hashType="hashbang">
         <Navbar/>
-        <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/services' element={<ServicePage/>}/>
-          <Route path='/Career' element= {<CareerPage/>}/>
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
+        <ScrollToTop>
+          <Routes>
+            <Route path='/' element={<HomePage/>}/>
+            <Route path='/services' element={<ServicePage/>}/>
+            <Route path='/Career' element= {<CareerPage/>}/>
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </ScrollToTop>
       </HashRouter>
     </>
   );

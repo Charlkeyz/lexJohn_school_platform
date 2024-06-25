@@ -141,9 +141,13 @@ const AboutUs = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
-      once: true,     // Whether animation should happen only once - while scrolling down
+      once: true,
+           
     });
   }, []);
+
+  const viewportHeight = window.innerHeight;
+  const middleOfViewport = viewportHeight;
   
   return (
     <>
@@ -154,13 +158,15 @@ const AboutUs = () => {
           return (
             <div
               key={index}
+              data-aos="fade-up"
+              data-aos-offset={middleOfViewport}
               className={`flex ${
                 index === 1 ? "sm:flex-row-reverse" : "sm:flex-row flex-col"
               } justify-center items-center sm:flex-row flex-col sm:gap-40 ${
                 index === 0 ? "bg-tertiary" : ""
               }`}
             >
-              <div data-aos="fade-up" className="text-center sm:text-left">
+              <div className="text-center sm:text-left">
                 <h2
                   className={`${
                     index === 0
@@ -174,7 +180,7 @@ const AboutUs = () => {
                   {items.content}
                 </p>
               </div >
-                <img data-aos="fade-right" className="sm:w-[400px] my-10 p-5"  src={items.image} alt="" />
+                <img data-aos="fade-right" data-aos-offset={middleOfViewport} className="sm:w-[400px] my-10 p-5"  src={items.image} alt="" />
             </div>
           );
         })}
@@ -191,6 +197,7 @@ const AboutUs = () => {
               <div
                 key={index}
                 data-aos="fade-right"
+                data-aos-offset={middleOfViewport}
                 className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5"
               >
                 <div
@@ -216,9 +223,9 @@ const AboutUs = () => {
         <div className="flex sm:flex-row flex-col justify-center items-center gap-4 my-10">
           {ourTeamData.map((items, index) => {
             return (
-              <div key={index}>
-                <div>
-                  <img data-aos="fade-up" src={items.image} alt="" />
+              <div key={index} >
+                <div data-aos="fade-up" data-aos-offset={middleOfViewport}>
+                  <img src={items.image} alt="" />
                 </div>
                 <div className="shadow-xl">
                   <h3 className="text-1xl font-bold flex justify-center items-center my-4">
@@ -251,6 +258,8 @@ const AboutUs = () => {
             {productsData.map((items, index) => {
               return (
                 <div
+                  data-aos="fade-up"
+                  data-aos-offset={middleOfViewport}
                   key={index}
                   className="h-[286px] w-[331px] bg-white flex justify-center items-center"
                 >
