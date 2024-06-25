@@ -2,11 +2,15 @@ import Contact from "../../Contact/Contact";
 // import Navbar from "../../NavBar/Navbar";
 import Footer from "../../Footer/footer";
 import Button from "../../Button/Button";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+// import { motion } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
 import Slider from "react-slick/lib/slider";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+// import useAnimateOnView from "../../useAnimationOnView";
 
 
 const dummyData = [
@@ -133,18 +137,19 @@ var settings = {
 
 
 const AboutUs = () => {
-  const { ref: componentRef, inView: isVisible } = useInView();
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true,     // Whether animation should happen only once - while scrolling down
+    });
+  }, []);
+  
   return (
     <>
       {/* <Navbar /> */}
-      <motion.div
-        ref={componentRef}
-        className="w-screen flex flex-col mt-20"
-        initial={{ opacity: 0, y: 50 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="w-screen flex flex-col mt-20">
+  
         {dummyData.map((items, index) => {
           return (
             <div
@@ -155,7 +160,7 @@ const AboutUs = () => {
                 index === 0 ? "bg-tertiary" : ""
               }`}
             >
-              <div className="text-center sm:text-left">
+              <div data-aos="fade-up" className="text-center sm:text-left">
                 <h2
                   className={`${
                     index === 0
@@ -168,15 +173,15 @@ const AboutUs = () => {
                 <p className="w-[360px] text-1xs text-text-color">
                   {items.content}
                 </p>
-              </div>
-              <img className="sm:w-[400px] my-10 p-5"  src={items.image} alt="" />
+              </div >
+                <img data-aos="fade-right" className="sm:w-[400px] my-10 p-5"  src={items.image} alt="" />
             </div>
           );
         })}
-      </motion.div>
+      </div>
       <div className="sm:h-[400px] h-screen bg-tertiary">
         <div className=" sm:my-10">
-          <h1 className="sm:text-3xl text-2xl pt-5 font-bold flex justify-center sm:relative top-10">
+          <h1 data-aos="fade-left" className="sm:text-3xl text-2xl pt-5 font-bold flex justify-center sm:relative top-10">
             LexJon By the Numbers
           </h1>
         </div>
@@ -185,9 +190,11 @@ const AboutUs = () => {
             return (
               <div
                 key={index}
+                data-aos="fade-right"
                 className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5"
               >
-                <div className="px-20">
+                <div
+                  className="px-20">
                   <img className="my-5" src={items.image} alt="" />
                 </div>
                 <div className="my-0">
@@ -211,7 +218,7 @@ const AboutUs = () => {
             return (
               <div key={index}>
                 <div>
-                  <img className="" src={items.image} alt="" />
+                  <img data-aos="fade-up" src={items.image} alt="" />
                 </div>
                 <div className="shadow-xl">
                   <h3 className="text-1xl font-bold flex justify-center items-center my-4">
@@ -239,7 +246,7 @@ const AboutUs = () => {
             Discover our industry-leading software solutions
           </p>
         </div>
-        <div className="flex justify-center items-center gap-12 mt-10 ">
+        <div data-aos="fade-up" className="flex justify-center items-center gap-12 mt-10 ">
           <Slider {...settings} className="w-[331px] sm:w-[1000px] h-[286px] overflow-hidden">
             {productsData.map((items, index) => {
               return (

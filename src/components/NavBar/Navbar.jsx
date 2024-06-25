@@ -31,7 +31,7 @@ const Navbar = () => {
                 <div className='sm:pl-36 pl-5'>
                     <img src={Logo} alt="" className='w-[100px]' />    
                 </div>
-                <div className='sm:hidden pr-5' onClick={toggleBar}>
+                <div className='sm:hidden pr-5 overflow-hidden' onClick={toggleBar}>
                     {isOpen ? (
                         <GrClose  className={`text-white text-3xl ${isOpen ? "icon-transition": "icon-transition-close"}`}/>) : (
                         <VscThreeBars className={`text-white text-3xl ${!isOpen ? "icon-transition": "icon-transition-close"}`}/>

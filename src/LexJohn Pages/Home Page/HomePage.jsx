@@ -13,38 +13,54 @@ import Testimonial from '../../components/Testimonial/Testimonial'
 // import Navbar from '../../components/NavBar/Navbar'
 import Footer from '../../components/Footer/footer'
 // import { useInView } from "react-intersection-observer";
-import { motion, useInView, useAnimation} from "framer-motion"
+import { motion} from "framer-motion"
 import Contact from '../../components/Contact/Contact'
-import { useEffect, useRef } from 'react'
+import useAnimateOnView from '../../components/useAnimationOnView'
+// import { useEffect, useRef } from 'react'
 
 const HomePage = () => {
+//    const animationOption = {triggerOnce: true}
+   const {ref: ref1, mainControls: mainControls1} = useAnimateOnView()
+   const {ref: ref2, mainControls: mainControls2} = useAnimateOnView()
+   const {ref: ref3, mainControls: mainControls3} = useAnimateOnView()
+   const {ref: ref4, mainControls: mainControls4} = useAnimateOnView()
+   const {ref: ref5, mainControls: mainControls5} = useAnimateOnView()
+   const {ref: ref6, mainControls: mainControls6} = useAnimateOnView()
+   const {ref: ref7, mainControls: mainControls7} = useAnimateOnView()
+   const {ref: ref8, mainControls: mainControls8} = useAnimateOnView()
+
+
+    
+    
+    
     
     // const {innerWidth: Width} = window
-    const ref = useRef(null)
-    const isInView = useInView(ref)
+    // const ref = useRef(null)
+    // const isInView = useInView(ref)
+    // console.log(ref, "signal me")
     
-    const mainControls = useAnimation()
-    useEffect(()=> {
-        if(isInView){
-            mainControls.start("visible")
-        }
-    },[isInView])
+    // const mainControls = useAnimation()
+    // useEffect(()=> {
+    //     if(isInView){
+    //         mainControls.start("visible")
+    //     }
+    // },[isInView])
     
     
   return (
     <main>
         {/* <Navbar/> */}
-        <section className='sm:flex flex-col justify-center items-center w-screen overflow-hidden'>
-            <motion.div 
-                ref={ref}
-                className='sm:flex justify-center gap-40 items-center sm:p-20 w-screen mt-20'
+        <section className='sm:flex flex-col justify-center items-center w-screen mt-20 overflow-hidden'>
+            <motion.div
+                ref={ref1} 
+                className='sm:flex justify-center gap-40 items-center sm:p-20 w-screen'
                 variants={{
-                    hidden: { opacity: 0, y: 50 },
+                    hidden: { opacity: 0, y: 75 },
                     visible: { opacity: 1, y: 0 },
                   }}
                 initial="hidden"
-                animate={mainControls}
-                transition={{ duration: 0.8, delay: 0.25 }}>
+                animate={mainControls1}
+                transition={{ duration: 0.8, delay: 0.15 }}>
                 <div className='sm:flex flex-col sm:w-[580.5px] gap-5 mt-5 w-screen p-10'>
                     <h1 className='sm:text-4xl font-bold leading-10 sm:w-[486px] text-3xl'>Transforming Digital Solutions for a Smarter Future</h1>
                     <p className='text-text-color leading-6 sm:text-base mt-3 text-sm'>
@@ -62,15 +78,15 @@ const HomePage = () => {
                 <p className='text-white sm:text-base font-bold leading-6 text-sm p-3'> 1000+ customers in over 20 countries in africa grow their businesses with LEXJON Technologies</p>
             </div>
             <motion.div
-                ref={ref}
+                ref={ref2}
                 className='sm:flex justify-center items-center sm:w-[1200px] gap-10 sm:p-20 p-5 w-screen mt-20'
                 variants={{
-                    hidden: { opacity: 0, x: 50 },
+                    hidden: { opacity: 0, x: 75 },
                     visible: { opacity: 1, x: 0 },
                   }}
                 initial="hidden"
-                animate={mainControls}
-                transition={{ duration: 0.8, delay: 0.70 }}>
+                animate={mainControls2}
+                transition={{ duration: 0.8, delay: 0.35 }}>
                 <img src={Image2} alt="" />
                 <div className='flex flex-col sm:w-[644px] sm:gap-5 mt-5'>
                     <h1 className='text-2xl font-semibold leading-10'>About LexJon</h1>
@@ -93,19 +109,37 @@ const HomePage = () => {
                     </div>
                 </div>
             </motion.div>
-            <div 
-                className={`flex justify-between items-center sm:gap-24 mt-10`}>
+            <motion.div
+                ref={ref3}
+                variants={{
+                    hidden: { opacity: 0, y: 75 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                initial="hidden"
+                animate={mainControls3}
+                transition={{ duration: 0.8, delay: 0.50 }}
+                className={`flex justify-between items-center sm:gap-24 mt-10 overflow-hidden`}>
 
                 {
                     ArraysOfSDE.map((item, index)=> (
                         <div key={index} className='sm:flex flex-col justify-center items-center p-5'>
                             <img src={item.img} alt="" className='w-[50px]'/>
-                            <h1 className='sm:text-2xl font-semibold sm:leading-10'>{item.title}</h1>
+                            <h1 className='sm:text-2xl font-semibold sm:leading-10 text-sm'>{item.title}</h1>
                         </div>
                     ))
                 }
-            </div>
-            <div className={`my-10 flex flex-col items-center gap-5 p-5 w-screen`}>
+            </motion.div>
+            <motion.div
+                ref={ref4}
+                ariants={{
+                    hidden: { opacity: 0, x: 75 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                initial="hidden"
+                animate={mainControls4}
+                transition={{ duration: 0.8, delay: 0.65 }}
+                 
+                className={`my-10 flex flex-col items-center gap-5 p-5 w-screen`} >
                 <img src={FeaturedCourseImg} alt="" />
                 <div className="flex flex-col gap-4">
                     <p className='text-text-color sm:text-lg font-normal leading-6 text-sm'>Our team of experts offer a range of services to meet up your IT needs. We specialize in:</p>
@@ -113,7 +147,7 @@ const HomePage = () => {
                     <p className='text-text-color sm:text-lg font-normal leading-6 text-sm'><span className='text-secondary'>Digital Marketing: </span>Comprehensive digital marketing strategies to boost your brand visibility.</p>
                     <p className='text-text-color sm:text-lg font-normal leading-6 text-sm'><span className='text-secondary'>Digital Education: </span> Innovative educational software and platforms designed for effective learning</p>
                 </div>
-                    <div className='flex gap-5 p-10'>
+                    <div className='flex sm:gap-5 gap-2 p-10'>
                         <Button className='w-[129px] h-[48px] text-white text-base font-bold'>
                             Get a demo
                         </Button>
@@ -121,20 +155,60 @@ const HomePage = () => {
                             Get started for free
                         </Button>
                     </div>
-            </div>
+            </motion.div>
 
-            <div className='my-10'>
+            <motion.div 
+                ref={ref5}
+                variants={{
+                    hidden: { opacity: 0, y: 75 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                initial="hidden"
+                animate={mainControls5}
+                transition={{ duration: 0.8, delay: 0.35 }}
+                
+                className='my-10'>
                 <Companies/>
-            </div>
+            </motion.div>
 
-            <div className="relative w-full h-full flex flex-col justify-center items-center ">
-                <img src={OvalBackground} alt="" className="absolute sm:relative  inset-0 w-full h-full object-cover bottom-20" />
-                <div className='sm:absolute'><Products/></div>
+            <div className="relative w-full h-full flex flex-col justify-center items-center " >
+                <motion.img
+                    ref={ref6}
+                    variants={{
+                        hidden: { opacity: 0, x: 75 },
+                        visible: { opacity: 1, x: 0 },
+                      }}
+                    initial="hidden"
+                    animate={mainControls6}
+                    transition={{ duration: 0.8, delay: 0.75 }}   
+                    src={OvalBackground} alt="" className="absolute sm:relative  inset-0 w-full h-full object-cover bottom-20" />
+                <div ref={ref7} className='sm:absolute'>
+                    <Products 
+                        ref={ref7}
+                        variants={{
+                            hidden: { opacity: 0, y: 75 },
+                            visible: { opacity: 1, y: 0 },
+                          }}
+                        initial="hidden"
+                        animate={mainControls7}
+                        transition={{ duration: 0.8, delay: 0.35 }}   
+                    />
+                </div>
             </div>
-            <div className={`relative`}>
+            <motion.div
+                 ref={ref8}
+                 variants={{
+                     hidden: { opacity: 0, x: 75 },
+                     visible: { opacity: 1, x: 0 },
+                   }}
+                 initial="hidden"
+                 animate={mainControls8}
+                 transition={{ duration: 0.8, delay: 0.35 }}   
+       
+                 className={`relative`}>
                 <Testimonial title="Testimonials"/>  
-            </div>
-            <div className='w-screen h-[295px] mb-10 '>
+            </motion.div>
+            <div className='w-screen h-[295px] mb-10 ' >
                 <Contact/>
             </div>
         </section>

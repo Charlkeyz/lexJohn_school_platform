@@ -17,7 +17,8 @@ const CareerPage = () => {
         <div className="flex sm:flex-row flex-col justify-center items-center bg-background  w-screen gap-20 sm:gap-0">
             <div className="flex flex-col items-center sm:items-start sm:w-[486px] w-screen gap-10 mt-24">
                 <h1 className="font-bold text-[40px] leading-[48px] text-center sm:text-start">Let's grow together</h1>
-                <p className="sm:text-base text-sm p-1 text-text-color font-normal leading-6 text-center sm:text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                <p className="sm:text-base text-sm p-1 text-text-color font-normal leading-6 text-center sm:text-start">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Amet temporibus enim ullam blanditiis. Nam dolor, 
                     quis voluptates accusamus eligendi placeat a commodi fugiat veniam expedita vero voluptas. Iure, nulla nostrum.
                 </p>
