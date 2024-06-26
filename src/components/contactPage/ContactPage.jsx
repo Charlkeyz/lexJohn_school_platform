@@ -46,6 +46,10 @@ const ContactPage = () => {
       once: true,     // Whether animation should happen only once - while scrolling down
     });
   }, []);
+
+  const viewportHeight = window.innerHeight;
+  const middleOfViewport = viewportHeight / 2;
+  
   
   return (
     <>
@@ -60,7 +64,7 @@ const ContactPage = () => {
             </p>
           </div>
           <div className="">
-            <img data-aos="fade-up" src="/images/Images.png" alt="" />
+            <img data-aos="fade-up" data-aos-offset={middleOfViewport} src="/images/Images.png" alt="" />
           </div>
         </div>
       </div>
@@ -70,6 +74,7 @@ const ContactPage = () => {
             <div
               key={index}
               data-aos="fade-up"
+              data-aos-offset={middleOfViewport}
               className="w-[290px] h-[220px] bg-white sm:relative 
                 bottom-60 left-20 flex flex-col items-center border border-black rounded-xl sm:border-none"
             >
@@ -103,12 +108,12 @@ const ContactPage = () => {
       </div>
 
       <div className="bg-w-screen sm:h-[400px] h-[1000px] sm:relative bottom-40 mt-10 sm:mt-0">
-        <h2 data-aos="fade-right" className="text-2xl font-bold text-center sm:mb-4 p-3">
+        <h2 data-aos="fade-right" data-aos-offset={middleOfViewport} className="text-2xl font-bold text-center sm:mb-4 p-3">
           Connect with our Head office
         </h2>
         <div className="w-screen flex flex-col items-center h-[600px]">
           <div className="mt-4 flex sm:flex-row flex-col justify-center items-center ">
-            <div className="pl-6 sm:pr-6 h-[620px] bg-tertiary" data-aos="fade-up">
+            <div className="pl-6 sm:pr-6 h-[620px] bg-tertiary" data-aos="fade-up" data-aos-offset={middleOfViewport}>
               <h2 className="text-2xl font-bold mt-8">Contact Form</h2>
               <p className="text-1xl text-primary mt-2">
                 We're here to answer your questions.
@@ -155,11 +160,12 @@ const ContactPage = () => {
                 {addressData.map((items, index) => {
                   return (
                     <div key={index}>
-                      <div className="text-[13px] font-bold mb-4 flex justify-center" data-aos="fade-left">
+                      <div className="text-[13px] font-bold mb-4 flex justify-center" data-aos="fade-left" data-aos-offset={middleOfViewport}>
                         {items.head}
                       </div>
                       <p
                         data-aos="fade-right"
+                        data-aos-offset={middleOfViewport}
                         className={`text-[13px] mt-2 flex justify-center ${
                           index === 0 ? "text-yellow" : ""
                         }`}
@@ -175,7 +181,7 @@ const ContactPage = () => {
         </div>
       </div>
       <div className="sm:mt-40 sm:mb-10">
-        <img data-aos="fade-down" className="w-screen sm:h-[500px] p-5" src="/images/Rectangle 4081.png" />
+        <img data-aos="fade-down" data-aos-offset={middleOfViewport} className="w-screen sm:h-[500px] p-5" src="/images/Rectangle 4081.png" />
       </div>
       <Footer />
     </>

@@ -146,7 +146,7 @@ const AboutUs = () => {
   }, []);
 
   const viewportHeight = window.innerHeight;
-  const middleOfViewport = viewportHeight;
+  const middleOfViewport = viewportHeight / 2;
   
   return (
     <>
