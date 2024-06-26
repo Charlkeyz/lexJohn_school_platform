@@ -141,8 +141,7 @@ const AboutUs = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
-      once: true,
-           
+      once: true,     
     });
   }, []);
 
