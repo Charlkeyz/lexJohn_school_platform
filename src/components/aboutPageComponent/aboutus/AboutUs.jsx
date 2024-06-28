@@ -7,9 +7,11 @@ import Button from "../../Button/Button";
 import Slider from "react-slick/lib/slider";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import CountUp from "react-countup";
+import ScrollTrigger from 'react-scroll-trigger';
 // import useAnimateOnView from "../../useAnimationOnView";
 
 
@@ -39,17 +41,20 @@ const dummyData = [
 
 const lexjonData = [
   {
-    serevices: "20 Remote Offices",
+    services: "Remote Offices",
+    figures: 20,
     image: "/images/Stack.png",
   },
 
   {
-    serevices: "100+ Employees",
+    services: "Employees",
+    figures: 100,
     image: "/images/Users.png",
   },
 
   {
-    serevices: "1000+ Customers",
+    services: "Customers",
+    figures: 1000,
     para: "Worldwide",
     image: "/images/GlobeHemisphereWest.png",
   },
@@ -147,6 +152,12 @@ const AboutUs = () => {
 
   const viewportHeight = window.innerHeight;
   const middleOfViewport = viewportHeight / 2;
+
+  const [counterOn, setCounterOn] = useState(false)
+
+  const handleCounterOn = () => {
+    setCounterOn(true)
+  }
   
   return (
     <>
@@ -191,25 +202,31 @@ const AboutUs = () => {
           </h1>
         </div>
         <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-12 gap-7">
-          {lexjonData.map((items, index) => {
-            return (
-              <div
-                key={index}
-                data-aos="fade-right"
-                data-aos-offset={middleOfViewport}
-                className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5"
-              >
-                <div
-                  className="px-20">
-                  <img className="my-5" src={items.image} alt="" />
-                </div>
-                <div className="my-0">
-                  <h3 className="w-100 px-14">{items.serevices}</h3>
-                  <p className="px-20">{items.para}</p>
-                </div>
-              </div>
-            );
-          })}
+          <ScrollTrigger onEnter={handleCounterOn} onExit={() => setCounterOn(false)}>
+                {lexjonData.map((items, index) => {
+                  return (
+                    <div
+                      key={index}
+                      data-aos="fade-right"
+                      data-aos-offset={middleOfViewport}
+                      className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5"
+                    >
+                      <div
+                        className="px-20">
+                        <img className="my-5" src={items.image} alt="" />
+                      </div>
+                      <div className="my-0">
+                        <h3 className="w-100 flex justify-center items-center">
+                          {counterOn && <CountUp start={0} end={items.figures} duration={4} delay={0}/>}
+                          <span className="pr-1">+</span>
+                          {items.services}
+                        </h3>
+                        <p className="px-20">{items.para}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+          </ScrollTrigger>
         </div>
       </div>
       <div>
