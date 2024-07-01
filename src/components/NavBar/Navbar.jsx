@@ -1,4 +1,5 @@
 // import styles from './Navbar.module.css'
+<<<<<<< HEAD
 import { NavRoutes } from '../../ArrayOfData/NavBarArrays'
 import Button from '../Button/Button'
 import Logo from '/LexJohnLogo/LexJohnLogo.png'
@@ -6,6 +7,12 @@ import { Link, useLocation } from 'react-router-dom'
 import { VscThreeBars } from "react-icons/vsc";
 import { GrClose } from "react-icons/gr";
 import { useState } from 'react';
+=======
+import React from "react";
+import { NavRoutes } from "../../ArrayOfData/NavBarArrays";
+import Button from "../Button/Button";
+import Logo from "/LexJohnLogo/LexJohnLogo.png";
+>>>>>>> target/main
 
 const Navbar = () => {
     const location = useLocation()
@@ -24,6 +31,7 @@ const Navbar = () => {
 
 
   return (
+<<<<<<< HEAD
     
         <nav 
             className={`w-screen bg-primary sm:flex sm:h-auto sm:w-full z-20 left-0 right-0 top-0 py-5 justify-between items-center overflow-hidden fixed`}>
@@ -75,3 +83,22 @@ const Navbar = () => {
 }
 
 export default Navbar
+=======
+    <main className="w-screen bg-primary flex h-[114px] justify-between items-center ">
+      <div className="pl-36">
+        <img src={Logo} alt="" />
+      </div>
+      <ul className="flex justify-center items-center pr-40 ">
+        {NavRoutes.map((routes, index) => (
+          <div key={index}>
+            <li className="text-white pr-20">{routes.label}</li>
+          </div>
+        ))}
+        <Button>Get in touch</Button>
+      </ul>
+    </main>
+  );
+};
+
+export default Navbar;
+>>>>>>> target/main
