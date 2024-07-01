@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Companies from "../../components/6.3k trusted companies/companies"
 import Footer from "../../components/Footer/footer"
 // import Navbar from "../../components/NavBar/Navbar"
