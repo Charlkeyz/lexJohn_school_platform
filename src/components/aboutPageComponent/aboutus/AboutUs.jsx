@@ -195,25 +195,25 @@ const AboutUs = () => {
           );
         })}
       </div>
-      <div className="sm:h-[400px] h-screen bg-tertiary">
+      <div className="sm:h-[500px]  bg-tertiary w-screen">
         <div className=" sm:my-10">
-          <h1 data-aos="fade-left" className="sm:text-3xl text-2xl pt-5 font-bold flex justify-center sm:relative top-10">
+          <h1 data-aos="fade-left" className="sm:text-3xl text-2xl pt-5 font-bold flex justify-center pb-5">
             LexJon By the Numbers
           </h1>
         </div>
-        <div className="flex flex-col sm:flex-row justify-center items-center sm:gap-12 gap-7">
-          <ScrollTrigger onEnter={handleCounterOn} onExit={() => setCounterOn(false)}>
+        <div className="flex justify-center items-center w-screen">
+          <ScrollTrigger onEnter={handleCounterOn} onExit={() => setCounterOn(false)} className="flex flex-col sm:flex-row gap-10 justify-center items-center mb-5">
                 {lexjonData.map((items, index) => {
                   return (
                     <div
                       key={index}
-                      data-aos="fade-right"
+                      // data-aos="fade-right"
                       data-aos-offset={middleOfViewport}
-                      className="h-[200px] w-[260px] bg-white text-1xl font-bold flex flex-col relative top-5"
+                      className="h-[309px] w-[253px] bg-white text-1xl gap-2 font-bold flex flex-col justify-center items-center"
                     >
                       <div
-                        className="px-20">
-                        <img className="my-5" src={items.image} alt="" />
+                        className="">
+                        <img className="" src={items.image} alt="" />
                       </div>
                       <div className="my-0">
                         <h3 className="w-100 flex justify-center items-center">
