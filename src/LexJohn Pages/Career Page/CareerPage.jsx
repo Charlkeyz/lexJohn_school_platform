@@ -12,10 +12,10 @@ import tickerIcon from '/LexJohn_Images/homepages images/Iconsax.svg'
 
 const CareerPage = () => {
   return (
-    <div className="overflow-hidden">
+    <di>
         {/* <Navbar/> */}
-        <div className="flex sm:flex-row flex-col justify-center items-center bg-background  w-screen gap-20 sm:gap-0">
-            <div className="flex flex-col items-center sm:items-start sm:w-[486px] w-screen gap-10 mt-24">
+        <div className="flex sm:flex-row flex-col justify-center items-center bg-background pt-32 w-screen gap-20 sm:gap-0">
+            <div className="flex flex-col items-center sm:items-start sm:w-[486px] w-screen gap-10">
                 <h1 className="font-bold text-[40px] leading-[48px] text-center sm:text-start">Let's grow together</h1>
                 <p className="sm:text-base text-sm p-1 text-text-color font-normal leading-6 text-center sm:text-start">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -58,7 +58,7 @@ const CareerPage = () => {
             <Button className='w-[266px] text-white'>See all open positions</Button>
         </div>
         <Footer/>
-    </div>
+    </di>
   )
 }
 

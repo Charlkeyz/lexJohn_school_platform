@@ -54,8 +54,8 @@ const ContactPage = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="w-screen bg-tertiary h-[600px] flex flex-row justify-center items-center overflow-hidden">
-        <div className="flex sm:flex-row  flex-col justify-center items-center sm:mx-20 p-5 gap-10 mt-32 sm:mt-0 sm:gap-0 sm:p-0 ">
+      <div className="w-screen bg-tertiary h-[600px] pt-20 flex flex-row justify-center items-center overflow-hidden">
+        <div className="flex sm:flex-row  flex-col justify-center items-center sm:mx-20 p-5 gap-10 sm:mt-0 sm:gap-0 sm:p-0 ">
           <div data-aos="fade-right">
             <h2 className="text-2xl font-bold">Get in touch</h2>
             <p className="text-1xs text-text-color my-4">

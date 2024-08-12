@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     
         <nav 
-            className={`w-screen bg-primary sm:flex sm:h-auto sm:w-full z-20 left-0 right-0 top-0 py-5 justify-between items-center overflow-hidden fixed`}>
+            className={`w-screen bg-primary sm:flex sm:h-auto sm:w-full z-10 left-0 right-0 top-0  py-4 justify-between items-center overflow-hidden fixed`}>
             <div className='flex justify-between items-center w-screen' >
                 <div className='sm:pl-36 pl-5'>
                     <img src={Logo} alt="" className='w-[100px]' />    
@@ -70,6 +70,7 @@ const Navbar = () => {
            
 
         </nav>
+    
     
   )
 }

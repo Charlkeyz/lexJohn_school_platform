@@ -29,8 +29,8 @@ const ServicePage = () => {
   return (
     <main>
         {/* <Navbar/> */}
-        <section className="flex flex-col justify-center items-center w-screen">
-          <div className="flex flex-col sm:flex-row sm:w-[1065px]  w-screen h-fit sm:h-fit justify-center items-center mt-20">
+        <section className="flex flex-col justify-center items-center w-screen pt-32">
+          <div className="flex flex-col sm:flex-row sm:w-[1065px]  w-screen h-fit sm:h-fit justify-center items-center">
             <div className="flex flex-col justify-center items-center sm:items-start sm:gap-10 gap-5 p-2">
               <h1 className="text-[40px] font-bold leading-[48px]" data-aos="fade-down" data-aos-offset={middleOfViewport}>What we do</h1>
               <p className="sm:text-base text-sm text-center sm:text-start font-normal leading-6 text-text-color"data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit.

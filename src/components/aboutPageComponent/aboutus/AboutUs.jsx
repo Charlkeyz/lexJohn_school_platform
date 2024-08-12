@@ -162,7 +162,7 @@ const AboutUs = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="w-screen flex flex-col mt-20">
+      <div className="w-screen flex flex-col">
   
         {dummyData.map((items, index) => {
           return (
@@ -173,7 +173,7 @@ const AboutUs = () => {
               className={`flex ${
                 index === 1 ? "sm:flex-row-reverse" : "sm:flex-row flex-col"
               } justify-center items-center sm:flex-row flex-col sm:gap-40 ${
-                index === 0 ? "bg-tertiary" : ""
+                index === 0 ? "bg-tertiary pt-32" : ""
               }`}
             >
               <div className="text-center sm:text-left">

@@ -35,7 +35,7 @@ useEffect(() => {
   return (
     <main>
         {/* <Navbar/> */}
-        <section className='sm:flex flex-col justify-center items-center w-screen mt-20 overflow-hidden'>
+        <section className='sm:flex flex-col justify-center items-center w-screen pt-32  overflow-hidden'>
             <div className='sm:flex justify-center gap-40 items-center sm:p-20 w-screen' data-aos-offset={middleOfViewport}>
                    <div className='sm:flex flex-col sm:w-[580.5px] gap-5 mt-5 w-screen p-10'>
                     <h1 className='sm:text-4xl font-bold leading-10 sm:w-[486px] text-3xl' data-aos="fade-down">Transforming Digital Solutions for a Smarter Future</h1>
